@@ -34,7 +34,7 @@ const Name = () => {
         <form onSubmit={handleSubmit} className="flex flex-col w-full gap-6">
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-2xl text-white">
+            <label htmlFor="name" className="block text-xl text-white">
               Full Name
             </label>
             <input
@@ -112,15 +112,54 @@ const Name = () => {
               <label htmlFor="branch" className="block text-xl text-white">
                 Branch
               </label>
-              <input
+              <select
                 id="branch"
-                type="text"
                 name="branch"
                 value={formData.branch}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-transparent"
+                className="w-full px-4 py-3 border text-white border-[#92FAE0] bg-transparent rounded-lg outline-none"
                 required
-              />
+              >
+                <option value="" className="bg-[#180B3F] text-white">
+                  Select Branch
+                </option>
+                <option value="CSE" className="bg-[#180B3F] text-white">
+                  CSE
+                </option>
+                <option value="CS" className="bg-[#180B3F] text-white">
+                  CS
+                </option>
+                <option value="CSE-AIML" className="bg-[#180B3F] text-white">
+                  CSE-AIML
+                </option>
+                <option value="AIML" className="bg-[#180B3F] text-white">
+                  AIML
+                </option>
+                <option value="CSE-DS" className="bg-[#180B3F] text-white">
+                  CSE-DS
+                </option>
+                <option value="CS-Hindi" className="bg-[#180B3F] text-white">
+                  CS-Hindi
+                </option>
+                <option value="IT" className="bg-[#180B3F] text-white">
+                  IT
+                </option>
+                <option value="CSIT" className="bg-[#180B3F] text-white">
+                  CSIT
+                </option>
+                <option value="ECE" className="bg-[#180B3F] text-white">
+                  ECE
+                </option>
+                <option value="EE" className="bg-[#180B3F] text-white">
+                  EE
+                </option>
+                <option value="ME" className="bg-[#180B3F] text-white">
+                  ME
+                </option>
+                <option value="Civil" className="bg-[#180B3F] text-white">
+                  Civil
+                </option>
+              </select>
             </div>
 
             {/* Year */}
@@ -136,23 +175,18 @@ const Name = () => {
                 className="w-full px-4 py-3 border text-white border-[#92FAE0] bg-transparent rounded-lg outline-none"
                 required
               >
-                <option value="">Select Year</option>
+                <option value="" className="bg-[#180B3F] text-white">
+                  Select Year
+                </option>
                 <option value="1st" className="bg-[#180B3F] text-white">
                   1st
                 </option>
                 <option value="2nd" className="bg-[#180B3F] text-white">
                   2nd
                 </option>
-                <option value="3rd" className="bg-[#180B3F] text-white">
-                  3rd
-                </option>
-                <option value="4th" className="bg-[#180B3F] text-white">
-                  4th
-                </option>
               </select>
             </div>
           </div>
-
           {/* Submit Button */}
           <button
             type="submit"
