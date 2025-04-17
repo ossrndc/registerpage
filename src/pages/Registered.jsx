@@ -2,7 +2,7 @@ import React from 'react'
 
 const Registered = () => {
   return (
-    <div>
+    <div className='w-full h-screen bg-yellow-100'>
       
     </div>
   )
