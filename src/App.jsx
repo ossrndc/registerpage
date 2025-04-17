@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/payment" element={<Payment />} />
         <Route path="/registered" element={<Registered />} />
       </Routes>
-      <Registered />
+      {/* <Registered /> */}
     </div>
   )
 }
