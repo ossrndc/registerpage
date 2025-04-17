@@ -31,7 +31,7 @@ const Name = () => {
 
   return (
     <div className="w-full min-h-screen p-6 md:p-20">
-      <h1 className="text-3xl md:text-4xl text-center font-bold text-[#92FAE0]">
+      <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-[#92FAE0]">
         Register Yourself
       </h1>
       <div className="w-full max-w-[600px] h-auto mt-6 m-auto flex justify-center items-center rounded-lg p-6">

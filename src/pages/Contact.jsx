@@ -29,7 +29,7 @@ const Contact = () => {
 
   return (
     <div className="w-full min-h-screen p-6 md:p-20">
-      <h1 className="text-3xl md:text-4xl text-center font-bold text-[#92FAE0]">
+      <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-[#92FAE0]">
         Register Yourself
       </h1>
 
