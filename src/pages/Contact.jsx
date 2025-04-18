@@ -68,21 +68,7 @@ const Contact = () => {
               required
             />
           </div>
-          {/* Email via link */}
-          <div>
-            <label htmlFor="email" className="block text-xl text-white">
-              Send Email Verificaton Link
-            </label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none"
-              required
-            />
-          </div>
+         
 
           {/* Residency Status */}
           <div>
