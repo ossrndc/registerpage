@@ -49,7 +49,12 @@ const Contact = () => {
       if (result.success) {
         // On success, navigate to Payment and pass data
         alert("CAPTCHA verified!");
-        navigate("/payment", { state: { contactData, formData} });
+        // ✅ Merge formData and contactData
+      const fullData = {
+        ...formData,
+        ...contactData,
+      };
+        navigate("/payment", { state: { fullData} });
       } else {
         alert("CAPTCHA verification failed. Please try again.");
       }
@@ -134,7 +139,7 @@ const Contact = () => {
               type="email"
               name="Email"
               value={contactData.Email}
-              pattern="^[a-zA-Z0-9._%+-]+@akgec\.ac\.in$"
+              // pattern="^[a-zA-Z0-9._%+-]+@akgec\.ac\.in$"
               onChange={handleChange}
               className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
               required

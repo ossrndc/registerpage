@@ -6,7 +6,7 @@ const Payment = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { contactData, formData } = location.state || {}; // Access formData, contactData, and Token passed from Contact page
+  const { fullData } = location.state || {}; // Access formData, contactData, and Token passed from Contact page
 
   const handlePayment = async () => {
     try {
@@ -38,8 +38,7 @@ const Payment = () => {
           if (verifyRes.data.success) {
             alert("✅ Payment verified successfully!");
             navigate("/registered", {state: {
-              contactData,
-              formData,
+              fullData,
               paymentDetails: {
                 order_id: razorpay_order_id,
                 payment_id: razorpay_payment_id,

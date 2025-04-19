@@ -6,14 +6,13 @@ import axios from "axios";
 
 const Registered = () => {
   const location = useLocation();
-  const { contactData, formData } = location.state || {};
+  const { fullData } = location.state || {};
 
   useEffect(() => {
     const sendDataToBackend = async () => {
       try {
         const res = await axios.post("http://localhost:5000/api/v1/", {
-          contactData,
-          formData,
+          fullData,
         });
 
         if (res.data.success) {
@@ -26,10 +25,10 @@ const Registered = () => {
       }
     };
 
-    if (contactData && formData ) {
+    if (fullData ) {
       sendDataToBackend();
     }
-  }, [contactData, formData,]);
+  }, [fullData,]);
 
   return (
     <div className="w-full h-screen px-4 py-8 md:px-10 md:py-16 flex flex-col gap-8 items-center justify-center text-center">
