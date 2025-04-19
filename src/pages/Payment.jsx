@@ -1,12 +1,16 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const PaymentPage = () => {
+const Payment = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const { contactData, formData } = location.state || {}; // Access formData, contactData, and Token passed from Contact page
+
   const handlePayment = async () => {
     try {
-      // 1. Create order on backend
       const orderRes = await axios.post("http://localhost:5000/api/v1/createOrder", {
-        event: "Test Item",
         amount: 100,
       });
 
@@ -22,28 +26,40 @@ const PaymentPage = () => {
         handler: async function (response) {
           const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response;
 
+          // Send payment details with form data and captcha token to backend
           const verifyRes = await axios.post("http://localhost:5000/api/v1/verifypayment", {
             order_id: razorpay_order_id,
             payment_id: razorpay_payment_id,
             signature: razorpay_signature,
+            // Include form data and contact details
+            // Token, // Include captcha token for verification
           });
 
           if (verifyRes.data.success) {
             alert("✅ Payment verified successfully!");
+            navigate("/registered", {state: {
+              contactData,
+              formData,
+              paymentDetails: {
+                order_id: razorpay_order_id,
+                payment_id: razorpay_payment_id,
+                signature: razorpay_signature,
+              }
+            }}); // 👈 redirect after success
           } else {
             alert("❌ Payment verification failed.");
           }
         },
         prefill: {
-          name: "", // Leave name empty or set it based on the user's data if necessary
-          email: "", // Leave email empty or set it based on the user's data if necessary
-          contact: "", // Set contact as empty to avoid pre-filling the phone number
+          name: "",
+          email: "",
+          contact: "",
         },
         theme: {
           color: "#3399cc",
         },
       };
-      console.log(options.prefill);  // Log to check the prefill values
+
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (error) {
@@ -128,4 +144,4 @@ const PaymentPage = () => {
   );
 };
 
-export default PaymentPage;
+export default Payment;
