@@ -14,6 +14,7 @@ const Registered = () => {
         const res = await axios.post("http://localhost:5000/api/v1/", {
           contactData,
           formData,
+          payment:true
         });
 
         if (res.data.success) {

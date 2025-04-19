@@ -37,27 +37,50 @@ const Contact = () => {
     e.preventDefault();
   
     try {
-      // Send only the CAPTCHA token to backend
       const res = await fetch("http://localhost:5000/api/v1/recaptcha", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Token: Token }),
+        body: JSON.stringify({ Token }),
       });
   
       const result = await res.json();
   
       if (result.success) {
-        // On success, navigate to Payment and pass data
         alert("CAPTCHA verified!");
-        navigate("/payment", { state: { contactData, formData} });
+  
+        // Merge formData and contactData into one flat object as per your schema
+        const studentData = {
+          ...formData,
+          ...contactData, // ✅ Normalizing key
+          payment: false,
+        };
+    // Optional cleanup
+        
+  
+        // Send data to backend for saving
+        const saveRes = await fetch("http://localhost:5000/api/v1/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(studentData),
+        });
+  
+        const savedStudent = await saveRes.json();
+  
+        if (saveRes.ok) {
+          // Navigate to payment or next step with saved data
+          navigate("/payment", { state: savedStudent });
+        } else {
+          alert(`Failed to save student: ${savedStudent.message}`);
+        }
       } else {
         alert("CAPTCHA verification failed. Please try again.");
       }
     } catch (err) {
-      console.error("Error verifying CAPTCHA:", err);
-      alert("Server error while verifying CAPTCHA.");
+      console.error("Error submitting data:", err);
+      alert("Something went wrong.");
     }
   };
+  
   return (
     <div className="w-full min-h-screen p-6 md:p-20">
       {/* OSS Logo */}
@@ -134,7 +157,6 @@ const Contact = () => {
               type="email"
               name="Email"
               value={contactData.Email}
-              pattern="^[a-zA-Z0-9._%+-]+@akgec\.ac\.in$"
               onChange={handleChange}
               className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
               required

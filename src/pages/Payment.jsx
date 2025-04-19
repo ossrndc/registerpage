@@ -31,6 +31,7 @@ const Payment = () => {
             order_id: razorpay_order_id,
             payment_id: razorpay_payment_id,
             signature: razorpay_signature,
+            Email:contactData.Email,
             // Include form data and contact details
             // Token, // Include captcha token for verification
           });
