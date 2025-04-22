@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Registered = () => {
   const location = useLocation();
-  const { contactData, formData } = location.state || {};
+  const { contactData, formData , paymentDetails } = location.state || {};
 
   useEffect(() => {
     const sendDataToBackend = async () => {
@@ -14,6 +14,7 @@ const Registered = () => {
         const res = await axios.post("http://localhost:5000/api/v1/", {
           contactData,
           formData,
+          paymentDetails,
           payment:true
         });
 
@@ -27,10 +28,10 @@ const Registered = () => {
       }
     };
 
-    if (contactData && formData ) {
+    if (contactData && formData && paymentDetails ) {
       sendDataToBackend();
     }
-  }, [contactData, formData,]);
+  }, [contactData, formData, paymentDetails]);
 
   return (
     <div className="w-full h-screen px-4 py-8 md:px-10 md:py-16 flex flex-col gap-8 items-center justify-center text-center">
