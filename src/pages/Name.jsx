@@ -109,7 +109,7 @@ const Name = () => {
           {/* Gender */}
           <div>
             <p className="text-white tracking-tight text-xl mb-2">Gender</p>
-            <div className="flex flex-wrap gap-4 text-white">
+            <div className="flex flex-wrap gap-6 md:gap-10 text-white">
               <label className="flex items-center gap-1 text-xl cursor-pointer">
                 <input
                   type="radio"
@@ -132,7 +132,7 @@ const Name = () => {
                 />
                 Female
               </label>
-              <label className="flex items-center gap-1 text-xl cursor-pointer">
+              {/* <label className="flex items-center gap-1 text-xl cursor-pointer">
                 <input
                   type="radio"
                   name="Gender"
@@ -141,8 +141,8 @@ const Name = () => {
                   onChange={handleChange}
                   className="accent-[#92FAE0]"
                 />
-                Other's
-              </label>
+                Other
+              </label> */}
             </div>
           </div>
 

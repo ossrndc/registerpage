@@ -10,12 +10,13 @@ const Contact = () => {
   const { formData } = location.state || {};
 
   const [captchaStatus, setCaptchaStatus] = useState(false);
-  const [Token, setToken] = useState('');
+
+  const [Token, setToken] = useState("");
   const onSuccess = (key) => {
-    console.log(key);
+    // console.log(key);
     setToken(key);
     setCaptchaStatus(true);
-  }
+  };
 
   const [contactData, setContactData] = useState({
     contact: "",
@@ -35,34 +36,41 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@akgec\.ac\.in$/;
+    if (!emailPattern.test(contactData.Email)) {
+      alert(
+        "Please enter a valid AKGEC email address (e.g., yourname@akgec.ac.in)"
+      );
+      return;
+    }
+
     try {
-      // Send only the CAPTCHA token to backend
       const res = await fetch("http://localhost:5000/api/v1/recaptcha", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Token: Token }),
+        body: JSON.stringify({ Token }),
       });
-  
+
       const result = await res.json();
-  
+
       if (result.success) {
-        // On success, navigate to Payment and pass data
         alert("CAPTCHA verified!");
-        // ✅ Merge formData and contactData
-      const fullData = {
-        ...formData,
-        ...contactData,
-      };
-        navigate("/payment", { state: { fullData} });
+        // Merge formData and contactData into one flat object as per your schema
+        const studentData = {
+          ...formData,
+          ...contactData, // ✅ Normalizing key
+        };
+        navigate("/payment", { state: { studentData, formData, contactData } });
       } else {
         alert("CAPTCHA verification failed. Please try again.");
       }
     } catch (err) {
-      console.error("Error verifying CAPTCHA:", err);
-      alert("Server error while verifying CAPTCHA.");
+      console.error("Error submitting data:", err);
+      alert("Something went wrong.");
     }
   };
+
   return (
     <div className="w-full min-h-screen p-6 md:p-20">
       {/* OSS Logo */}
@@ -139,7 +147,6 @@ const Contact = () => {
               type="email"
               name="Email"
               value={contactData.Email}
-              // pattern="^[a-zA-Z0-9._%+-]+@akgec\.ac\.in$"
               onChange={handleChange}
               className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
               required
@@ -180,7 +187,6 @@ const Contact = () => {
               onChange={onSuccess}
             />
           </div>
-
 
           {/* Submit Button */}
           <button

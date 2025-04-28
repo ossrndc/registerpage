@@ -1,35 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Linkedin from "../assets/linkedin.svg";
 import Instagram from "../assets/instagram.svg";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
 
 const Registered = () => {
-  const location = useLocation();
-  const { fullData } = location.state || {};
-
-  useEffect(() => {
-    const sendDataToBackend = async () => {
-      try {
-        const res = await axios.post("http://localhost:5000/api/v1/", {
-          fullData,
-        });
-
-        if (res.data.success) {
-          console.log("✅ Data sent to backend successfully!");
-        } else {
-          console.log("❌ Backend verification failed.");
-        }
-      } catch (err) {
-        console.error("❌ Error sending data to backend:", err);
-      }
-    };
-
-    if (fullData ) {
-      sendDataToBackend();
-    }
-  }, [fullData,]);
-
+  
   return (
     <div className="w-full h-screen px-4 py-8 md:px-10 md:py-16 flex flex-col gap-8 items-center justify-center text-center">
       
