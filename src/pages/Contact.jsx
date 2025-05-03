@@ -46,7 +46,7 @@ const Contact = () => {
     }
 
     try {
-      const res = await fetch("${process.env.REACT_APP_BACKEND_URL}/api/v1/recaptcha", {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/recaptcha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ Token }),
