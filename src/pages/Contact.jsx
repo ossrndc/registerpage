@@ -7,7 +7,7 @@ const Contact = () => {
   const navigate = useNavigate();
   const location = useLocation();
   
-  const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
+  const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
   // Retrieve form data passed from Name.jsx
   const { formData } = location.state || {};
