@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate, useLocation } from "react-router-dom";
 
+
 const Contact = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  
+  const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
 
   // Retrieve form data passed from Name.jsx
   const { formData } = location.state || {};
@@ -46,7 +49,7 @@ const Contact = () => {
     }
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/recaptcha`, {
+      const res = await fetch(`${backendUrl}/api/v1/recaptcha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ Token }),
