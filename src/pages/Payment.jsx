@@ -7,7 +7,7 @@ const Payment = () => {
   const location = useLocation();
 
   const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
-  const key=import.meta.env.VITE_RAZORPAY_KEY_ID
+  // const key=import.meta.env.VITE_RAZORPAY_KEY_ID
   const { contactData, formData } = location.state || {};
 
 const handlePayment = async () => {
@@ -19,7 +19,7 @@ const handlePayment = async () => {
     const { id: order_id, currency, amount } = orderRes.data;
 
     const options = {
-      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      key:rzp_test_7bGcPgTDJ16Tbw,
       amount,
       currency,
       name: "My Razorpay Store",
