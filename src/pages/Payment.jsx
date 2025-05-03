@@ -7,6 +7,7 @@ const Payment = () => {
   const location = useLocation();
 
   const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+  const key=import.meta.env.VITE_RAZORPAY_KEY_ID
   const { contactData, formData } = location.state || {};
 
 const handlePayment = async () => {
@@ -14,7 +15,7 @@ const handlePayment = async () => {
     const orderRes = await axios.post(`${backendUrl}/api/v1/createOrder`, {
       amount: 100, // You can adjust this dynamically based on your business logic
     });
-    console.log("Razorpay Key:", import.meta.env.VITE_RAZORPAY_KEY_ID);
+    console.log("Razorpay Key:", key);
     const { id: order_id, currency, amount } = orderRes.data;
 
     const options = {
