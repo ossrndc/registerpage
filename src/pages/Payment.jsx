@@ -10,7 +10,7 @@ const Payment = () => {
 
 const handlePayment = async () => {
   try {
-    const orderRes = await axios.post("http://localhost:5000/api/v1/createOrder", {
+    const orderRes = await axios.post("${process.env.REACT_APP_BACKEND_URL}/api/v1/createOrder", {
       amount: 100, // You can adjust this dynamically based on your business logic
     });
 
@@ -28,7 +28,7 @@ const handlePayment = async () => {
 
         try {
           // Send the payment details to the backend for verification and storing the transaction
-          const verifyRes = await axios.post("http://localhost:5000/api/v1/verifypayment", {
+          const verifyRes = await axios.post("${process.env.REACT_APP_BACKEND_URL}/api/v1/verifypayment", {
             order_id: razorpay_order_id,
             payment_id: razorpay_payment_id,
             signature: razorpay_signature,
@@ -49,7 +49,7 @@ const handlePayment = async () => {
             };
 
             // Send this payment data to the backend for further processing (e.g., saving to DB)
-            const savePaymentRes = await axios.post("http://localhost:5000/api/v1/savepayment", paymentData);
+            const savePaymentRes = await axios.post("${process.env.REACT_APP_BACKEND_URL}/api/v1/savepayment", paymentData);
 
             if (savePaymentRes.data.success) {
               alert("✅ Payment successful and data saved!");
