@@ -19,7 +19,7 @@ const handlePayment = async () => {
     const { id: order_id, currency, amount } = orderRes.data;
 
     const options = {
-      key:rzp_test_7bGcPgTDJ16Tbw,
+      key:"rzp_test_7bGcPgTDJ16Tbw",
       amount,
       currency,
       name: "My Razorpay Store",
