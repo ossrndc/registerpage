@@ -15,7 +15,7 @@ const handlePayment = async () => {
     const orderRes = await axios.post(`${backendUrl}/api/v1/createOrder`, {
       amount: 100, // You can adjust this dynamically based on your business logic
     });
-    console.log("Razorpay Key:", key);
+    // console.log("Razorpay Key:", key);
     const { id: order_id, currency, amount } = orderRes.data;
 
     const options = {
