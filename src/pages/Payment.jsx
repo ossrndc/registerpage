@@ -19,7 +19,7 @@ const handlePayment = async () => {
     const { id: order_id, currency, amount } = orderRes.data;
     console.log("helloooooooo")
     const options = {
-      key:"rzp_test_g9sYNNy9XfKPMx",
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
       amount,
       currency,
       name: "My Razorpay Store",
