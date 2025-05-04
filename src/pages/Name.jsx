@@ -18,7 +18,7 @@ const Name = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+    // console.log("Form Data:", formData);
 
     // Reset the form
     setFormData({
