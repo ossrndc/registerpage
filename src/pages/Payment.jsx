@@ -17,7 +17,6 @@ const handlePayment = async () => {
     });
     // console.log("Razorpay Key:", key);
     const { id: order_id, currency, amount } = orderRes.data;
-    console.log("helloooooooo")
     const options = {
       key: import.meta.env.VITE_RAZORPAY_KEY_ID,
       amount,
@@ -50,7 +49,7 @@ const handlePayment = async () => {
               contactData,
               // studentData,
             };
-            console.log("hello hhiii")
+            
             // Send this payment data to the backend for further processing (e.g., saving to DB)
             const savePaymentRes = await axios.post(`${backendUrl}/api/v1/savepayment`, paymentData);
 

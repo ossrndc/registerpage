@@ -9,7 +9,7 @@ const Contact = () => {
   
   const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
-  console.log("Backend URL:", backendUrl);
+  // console.log("Backend URL:", backendUrl);
   // Retrieve form data passed from Name.jsx
   const { formData } = location.state || {};
 
