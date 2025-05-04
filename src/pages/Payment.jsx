@@ -19,13 +19,14 @@ const handlePayment = async () => {
     const { id: order_id, currency, amount } = orderRes.data;
     console.log("helloooooooo")
     const options = {
-      key:"rzp_test_7bGcPgTDJ16Tbw",
+      key:"rzp_test_g9sYNNy9XfKPMx",
       amount,
       currency,
       name: "My Razorpay Store",
       description: "Buy One Item",
       order_id,
       handler: async function (response) {
+
         const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response;
 
         try {
