@@ -17,7 +17,7 @@ const handlePayment = async () => {
     });
     // console.log("Razorpay Key:", key);
     const { id: order_id, currency, amount } = orderRes.data;
-
+    console.log("helloooooooo")
     const options = {
       key:"rzp_test_7bGcPgTDJ16Tbw",
       amount,
