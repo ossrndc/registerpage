@@ -49,7 +49,7 @@ const handlePayment = async () => {
               contactData,
               // studentData,
             };
-
+            console.log("hello hhiii")
             // Send this payment data to the backend for further processing (e.g., saving to DB)
             const savePaymentRes = await axios.post(`${backendUrl}/api/v1/savepayment`, paymentData);
 
