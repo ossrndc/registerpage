@@ -30,7 +30,7 @@ const Contact = () => {
 
   useEffect(() => {
     if (formData) {
-      console.log("Form Data received from Name.jsx:", formData);
+      console.log("Form Data received");
     }
   }, [formData]);
 
