@@ -50,14 +50,19 @@ const Contact = () => {
     }
 
     try {
+      const payload = {
+        Token,
+        formData,
+        contactData,
+      };
       const res = await fetch(`${backendUrl}/api/v1/recaptcha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Token }),
+        body: JSON.stringify(payload),
       });
-
       const result = await res.json();
-
+      // console.log("Payload being sent to backend:", payload);
+      // console.log(formData)
       if (result.success) {
         alert("CAPTCHA verified!");
         // Merge formData and contactData into one flat object as per your schema
@@ -65,7 +70,8 @@ const Contact = () => {
           ...formData,
           ...contactData, // ✅ Normalizing key
         };
-        navigate("/payment", { state: { studentData, formData, contactData } });
+        navigate("/registered", { state: { studentData, formData, contactData } });
+        // navigate("/payment", { state: { studentData, formData, contactData } });
       } else {
         alert("CAPTCHA verification failed. Please try again.");
       }
@@ -150,6 +156,7 @@ const Contact = () => {
               id="Email"
               type="email"
               name="Email"
+              placeholder="studentxxxxxxx@akgec.ac.in"
               value={contactData.Email}
               onChange={handleChange}
               className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
@@ -197,7 +204,7 @@ const Contact = () => {
             type="submit"
             className="w-full mt-4 text-[#92FAE0] border text-xl border-[#92FAE0] active:scale-90 transition-transform duration-150 py-2 rounded-lg font-semibold outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
           >
-            Pay Now
+            Next
           </button>
         </form>
       </div>
