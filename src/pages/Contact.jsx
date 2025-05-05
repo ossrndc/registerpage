@@ -72,12 +72,10 @@ const Contact = () => {
         };
         navigate("/registered", { state: { studentData, formData, contactData } });
         // navigate("/payment", { state: { studentData, formData, contactData } });
-      } else {
         alert("You've already registered.");
       }
     } catch (err) {
       console.error("Error submitting data:", err);
-      
       alert("Something went wrong.");
     }
   };
