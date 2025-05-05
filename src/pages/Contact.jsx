@@ -77,6 +77,7 @@ const Contact = () => {
       }
     } catch (err) {
       console.error("Error submitting data:", err);
+      
       alert("Something went wrong.");
     }
   };
