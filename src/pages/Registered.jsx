@@ -42,7 +42,7 @@ const Registered = () => {
     {/* Text Content */}
     <div className="text-center">
       <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold text-[#92FAE0] leading-snug">
-        You've Registered Successfully. <br /> <span className='text-xl'>Check your spam folder(email).</span>Check your spam folder(email).
+        You've Registered Successfully. <br /> <span className='text-xl'>Check your spam folder(email).</span>
       </h1>
       <p className="text-lg sm:text-lg md:text-lg text-white mt-8 md:mt-2">
         For more information, check out our
