@@ -46,10 +46,10 @@ const Registered = () => {
       </h1>
       <p className="text-lg sm:text-lg md:text-lg text-white mt-8 md:mt-2">
         For more information, check out our
-        <span className="bg-white text-black px-2 py-1 rounded-md font-extrabold mx-1 inline-block">
+        <span className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-2 py-1 rounded-md font-extrabold mx-1 inline-block">
           Team OSS
         </span>
-        desk or contact us at +91-8529715481.
+        desk or contact us at <a href="tel:+918529715481">91-8529715481</a>
       </p>
     </div>
 

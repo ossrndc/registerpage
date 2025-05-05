@@ -68,7 +68,7 @@ const Name = () => {
   />
 </div>
       <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-[#92FAE0]">
-        Register Yourself
+        "COMMIT 2.0"
       </h1>
 
       <div className="w-full max-w-[600px] mt-6 mx-auto rounded-lg p-6">
