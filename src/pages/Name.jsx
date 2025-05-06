@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Name = () => {
   const navigate = useNavigate();
@@ -29,44 +29,44 @@ const Name = () => {
       Year: "",
     });
 
-    navigate('/contact', { state: { formData } }); // Navigate to the contact page
+    navigate("/contact", { state: { formData } }); // Navigate to the contact page
   };
 
   return (
     <div className="w-full min-h-screen p-6 md:p-20">
       {/* OSS Logo */}
-<div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
-  <img 
-    src="/OSS.png" 
-    alt="OSS Logo" 
-    className="w-16 sm:w-20 md:w-28 h-auto max-w-full"
-  />
-</div>
+      <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
+        <img
+          src="/OSS.png"
+          alt="OSS Logo"
+          className="w-16 sm:w-20 md:w-28 h-auto max-w-full"
+        />
+      </div>
 
-{/* Cross Icon */}
-<div className="fixed top-30 left-4 md:top-50 md:left-40 z-50">
-  <img 
-    src="/images/cross.png" 
-    alt="Cross" 
-    className="w-5 sm:w-8 md:w-10 lg:w-10 h-auto max-w-full"
-  />
-</div>
-{/* Triangle Icon */}
-<div className="fixed top-56 right-4 md:top-30 md:right-40 z-50">
-  <img 
-    src="/images/triangle.png" 
-    alt="Cross" 
-    className="w-16 sm:w-18 md:w-26 lg:w-30 h-auto max-w-full"
-  />
-</div>
-{/* Dot Icon */}
-<div className="fixed top-140 right-2 md:top-90 md:right-20 z-50">
-  <img 
-    src="/images/dot.png" 
-    alt="Cross" 
-    className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto max-w-full"
-  />
-</div>
+      {/* Cross Icon */}
+      <div className="fixed top-30 left-4 md:top-50 md:left-40 z-50">
+        <img
+          src="/images/cross.png"
+          alt="Cross"
+          className="w-5 sm:w-8 md:w-10 lg:w-10 h-auto max-w-full"
+        />
+      </div>
+      {/* Triangle Icon */}
+      <div className="fixed top-56 right-4 md:top-30 md:right-40 z-50">
+        <img
+          src="/images/triangle.png"
+          alt="Cross"
+          className="w-16 sm:w-18 md:w-26 lg:w-30 h-auto max-w-full"
+        />
+      </div>
+      {/* Dot Icon */}
+      <div className="fixed top-140 right-2 md:top-90 md:right-20 z-50">
+        <img
+          src="/images/dot.png"
+          alt="Cross"
+          className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto max-w-full"
+        />
+      </div>
       <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-[#92FAE0]">
         "COMMIT 2.0"
       </h1>
@@ -82,6 +82,8 @@ const Name = () => {
               id="Name"
               type="text"
               name="Name"
+              pattern="[A-Za-z]{2,}( [A-Za-z]{2,})?"
+              title="Enter a valid name (letters only, at least 2 characters each part)"
               value={formData.Name}
               onChange={handleChange}
               className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
@@ -98,6 +100,7 @@ const Name = () => {
               id="StudentNO"
               type="text"
               name="StudentNO"
+              pattern="^\d{5}\S*$"
               maxLength="10"
               value={formData.StudentNO}
               onChange={handleChange}
@@ -146,8 +149,8 @@ const Name = () => {
             </div>
           </div>
 
-           {/* Branch & Year */}
-           <div className="flex flex-col md:flex-row gap-4 justify-between">
+          {/* Branch & Year */}
+          <div className="flex flex-col md:flex-row gap-4 justify-between">
             {/* Branch */}
             <div className="w-full">
               <label htmlFor="Branch" className="block text-xl text-white">
