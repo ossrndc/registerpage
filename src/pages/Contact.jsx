@@ -72,7 +72,7 @@ const Contact = () => {
         };
         navigate("/registered", { state: { studentData, formData, contactData } });
         // navigate("/payment", { state: { studentData, formData, contactData } });
-        alert("You've already registered.");
+        alert("You are registered for the event.");
       }
     } catch (err) {
       console.error("Error submitting data:", err);
