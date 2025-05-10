@@ -13,7 +13,6 @@ const Closed = () => {
           <p>Thank you for your overwhelming interest and support!</p>
           <p>For updates and future events, stay connected with us:</p>
           <p className='text-[#60efff]'><a target='blank' href="https://www.instagram.com/team__oss/?hl=en">@team__oss</a></p>
-          <p className='text-[#60efff]'> <a href="tel:+918840267636">+91-8840267636</a>  </p>
         </div>
       </div>
     </div>
