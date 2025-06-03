@@ -10,9 +10,10 @@ const Contact = () => {
   const { formData } = location.state || {};
 
   const [captchaStatus, setCaptchaStatus] = useState(false);
+
   const [Token, setToken] = useState('');
   const onSuccess = (key) => {
-    console.log(key);
+    // console.log(key);
     setToken(key);
     setCaptchaStatus(true);
   }
@@ -40,38 +41,20 @@ const Contact = () => {
       const res = await fetch("http://localhost:5000/api/v1/recaptcha", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Token }),
+        body: JSON.stringify({ Token,contactData,formData }),
       });
   
       const result = await res.json();
   
       if (result.success) {
         alert("CAPTCHA verified!");
-  
         // Merge formData and contactData into one flat object as per your schema
         const studentData = {
-          ...formData,
-          ...contactData, // ✅ Normalizing key
-          payment: false,
-        };
-    // Optional cleanup
-        
-  
-        // Send data to backend for saving
-        const saveRes = await fetch("http://localhost:5000/api/v1/", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(studentData),
-        });
-  
-        const savedStudent = await saveRes.json();
-  
-        if (saveRes.ok) {
-          // Navigate to payment or next step with saved data
-          navigate("/payment", { state: savedStudent });
-        } else {
-          alert(`Failed to save student: ${savedStudent.message}`);
-        }
+            ...formData,
+            ...contactData, // ✅ Normalizing key
+          };
+                    navigate("/payment", { state: { studentData , formData, contactData } });
+    
       } else {
         alert("CAPTCHA verification failed. Please try again.");
       }
