@@ -33,7 +33,7 @@ const Name = () => {
   };
 
   return (
-    <div className="w-full h-screen p-6 md:p-20">
+    <div className="w-full h-screen overflow-hidden p-6 md:p-20">
       {/* OSS Logo */}
       <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
         <img
