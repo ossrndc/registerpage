@@ -43,13 +43,12 @@ const Name = () => {
         />
       </div>
       {/* Arrow Icon */}
-      {/* Arrow */}
+
       <div className="fixed top-22 md:hidden xl:block right-10 md:top-36 md:right-60 z-60">
         <div className="flex items-center rotate-[310deg] md:rotate-[300deg]">
-          {/* Rectangle shaft */}
+
           <div className="w-4 h-4 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[rgb(133,206,195)]"></div>
 
-          {/* Triangle tip */}
           <div
             className="w-0 h-0 
       border-t-[20px] border-t-transparent 
@@ -61,7 +60,6 @@ const Name = () => {
         </div>
       </div>
 
-      {/* Line Image */}
       <div className="fixed top-30 md:hidden xl:block right-0 sm:top-40 sm:-right-10 md:top-50 md:right-0 z-50 h-20 w-20 sm:h-48 sm:w-48 md:h-80 md:w-80">
         <img
           src="/images/line.png"

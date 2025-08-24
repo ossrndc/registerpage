@@ -108,13 +108,12 @@ const Contact = () => {
         />
       </div>
       {/* Arrow Icon */}
-      {/* Arrow */}
+
       <div className="fixed top-22 md:hidden xl:block right-10 md:top-36 md:right-60 z-60">
         <div className="flex items-center rotate-[310deg] md:rotate-[300deg]">
-          {/* Rectangle shaft */}
+
           <div className="w-4 h-4 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[rgb(133,206,195)]"></div>
 
-          {/* Triangle tip */}
           <div
             className="w-0 h-0 
       border-t-[20px] border-t-transparent 
@@ -125,7 +124,7 @@ const Contact = () => {
           ></div>
         </div>
       </div>
-      {/* Line Image */}
+
       <div className="fixed md:hidden xl:block top-30 right-0 sm:top-40 sm:-right-10 md:top-50 md:right-0 z-50 h-20 w-20 sm:h-48 sm:w-48 md:h-80 md:w-80">
         <img
           src="/images/line.png"
@@ -154,7 +153,7 @@ const Contact = () => {
       </h1>
 
       <div className="w-full max-w-[600px] mt-6 mx-auto rounded-lg p-6">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:gap-8">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           {/* Contact No */}
           <div>
             <label htmlFor="contact" className="block text-xl text-black">
@@ -168,7 +167,7 @@ const Contact = () => {
               name="contact"
               value={contactData.contact}
               onChange={handleChange}
-              className="w-full px-4 py-2 md:py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-70 relative"
+              className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-70 relative"
               required
             />
           </div>
@@ -184,7 +183,7 @@ const Contact = () => {
               placeholder="studentxxxxxxx@akgec.ac.in"
               value={contactData.Email}
               onChange={handleChange}
-              className="w-full px-4 py-2 md:py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative"
+              className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative"
               required
             />
           </div>
