@@ -83,7 +83,7 @@ const Name = () => {
       </h1>
 
       <div className="w-full max-w-[600px] mt-2 md:mt-6 mx-auto rounded-lg p-6">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           {/* Name */}
           <div>
             <label htmlFor="Name" className="block text-xl text-black">
@@ -97,7 +97,7 @@ const Name = () => {
               title="Enter a valid name (letters only, at least 2 characters each part)"
               value={formData.Name}
               onChange={handleChange}
-              className="w-full px-4 py-2 md:py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-70 relative"
+              className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-70 relative"
               required
             />
           </div>
@@ -115,7 +115,7 @@ const Name = () => {
               maxLength="10"
               value={formData.StudentNO}
               onChange={handleChange}
-              className="w-full px-4 py-2 md:py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative"
+              className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative"
               required
             />
           </div>
@@ -172,7 +172,7 @@ const Name = () => {
                 name="Branch"
                 value={formData.Branch}
                 onChange={handleChange}
-                className="w-full px-4 py-2 md:py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative"
+                className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative"
                 required
               >
                 <option value="" className="bg-[rgb(133,206,195)] text-black">
@@ -251,7 +251,7 @@ const Name = () => {
                 name="Domain"
                 value={formData.Domain}
                 onChange={handleChange}
-                className="w-full px-4 py-2 md:py-3 border backdrop-blur-md text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] z-10 relative"
+                className="w-full px-4 py-3 border backdrop-blur-md text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] z-10 relative"
                 required
               >
                 <option value="" className="bg-[rgb(133,206,195)] text-black">
@@ -276,7 +276,7 @@ const Name = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full mt-4 text-black border-black outline-none bg-[rgb(133,206,195)] border text-xl px-4 backdrop-blur-md z-10 relative active:scale-90 transition-transform duration-150 py-1.5 md:py-2 rounded-lg font-semibold"
+            className="w-full mt-4 text-black border-black outline-none bg-[rgb(133,206,195)] border text-xl px-4 backdrop-blur-md z-10 relative active:scale-90 transition-transform duration-150 py-2 rounded-lg font-semibold"
           >
             Next
           </button>
