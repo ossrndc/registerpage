@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -81,7 +81,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full min-h-screen p-6 md:p-20">
+    <div className="w-full h-screen overflow-hidden p-6 md:p-20">
       {/* OSS Logo */}
       <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
         <img
@@ -91,47 +91,73 @@ const Contact = () => {
         />
       </div>
 
-      {/* Penguine Icon */}
-      <div className="fixed top-20 left-4 md:top-40 md:left-60 z-50">
+      {/* Github Icon */}
+      <div className="fixed top-30 md:hidden xl:block left-4 md:top-40 md:left-80 z-70">
         <img
-          src="/images/penguine.png"
+          src="/images/github.png"
           alt="Cross"
-          className="w-16 sm:w-18 md:w-26 lg:w-30 h-auto max-w-full"
+          className="w-8 sm:w-18 md:w-16 lg:w-20 h-auto max-w-full"
         />
       </div>
       {/* Dot Icon */}
-      <div className="fixed top-140 left-2 md:top-100 md:left-20 z-50">
+      <div className="fixed top-130 md:hidden xl:block left-2 md:top-100 md:left-20 z-50">
         <img
           src="/images/dot.png"
           alt="Cross"
-          className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto max-w-full"
+          className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto invert max-w-full"
         />
       </div>
-      {/* Cross Icon */}
-      <div className="fixed top-50 right-4 md:top-20 md:right-30 z-50">
+      {/* Arrow Icon */}
+      {/* Arrow */}
+      <div className="fixed top-22 md:hidden xl:block right-10 md:top-36 md:right-60 z-60">
+        <div className="flex items-center rotate-[310deg] md:rotate-[300deg]">
+          {/* Rectangle shaft */}
+          <div className="w-4 h-4 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[rgb(133,206,195)]"></div>
+
+          {/* Triangle tip */}
+          <div
+            className="w-0 h-0 
+      border-t-[20px] border-t-transparent 
+      border-b-[20px] border-b-transparent 
+      border-l-[30px] border-l-[rgb(133,206,195)]
+      sm:border-t-[28px] sm:border-b-[28px] sm:border-l-[42px]
+      md:border-t-[40px] md:border-b-[40px] md:border-l-[60px]"
+          ></div>
+        </div>
+      </div>
+      {/* Line Image */}
+      <div className="fixed md:hidden xl:block top-30 right-0 sm:top-40 sm:-right-10 md:top-50 md:right-0 z-50 h-20 w-20 sm:h-48 sm:w-48 md:h-80 md:w-80">
         <img
-          src="/images/cross.png"
+          src="/images/line.png"
+          alt="line"
+          className="w-full h-full object-contain"
+        />
+      </div>
+      {/* Penguine Icon */}
+      <div className="fixed top-60 md:hidden xl:block right-6 md:top-58 rotate-4 md:right-110 z-60">
+        <img
+          src="/images/penguine2.png"
           alt="Cross"
-          className="w-5 sm:w-8 md:w-10 lg:w-10 h-auto max-w-full"
+          className="w-8 sm:w-8 md:w-10 lg:w-20 h-auto max-w-full"
         />
       </div>
       {/* JS Icon */}
-      <div className="fixed top-140 right-4 md:top-120 md:right-30 z-50">
+      <div className="fixed hidden top-140 xl:block right-4 md:top-140 md:right-80 z-50">
         <img
           src="/images/js.png"
           alt="Cross"
           className="w-16 sm:w-18 md:w-26 lg:w-30 h-auto max-w-full"
         />
       </div>
-      <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-[#92FAE0]">
-        "COMMIT 2.0"
+      <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-black">
+        "INIT'25"
       </h1>
 
       <div className="w-full max-w-[600px] mt-6 mx-auto rounded-lg p-6">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:gap-8">
           {/* Contact No */}
           <div>
-            <label htmlFor="contact" className="block text-xl text-white">
+            <label htmlFor="contact" className="block text-xl text-black">
               Contact Number
             </label>
             <input
@@ -142,13 +168,13 @@ const Contact = () => {
               name="contact"
               value={contactData.contact}
               onChange={handleChange}
-              className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
+              className="w-full px-4 py-2 md:py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-70 relative"
               required
             />
           </div>
           {/* Email */}
           <div>
-            <label htmlFor="Email" className="block text-xl text-white">
+            <label htmlFor="Email" className="block text-xl text-black">
               Email Address
             </label>
             <input
@@ -158,14 +184,14 @@ const Contact = () => {
               placeholder="studentxxxxxxx@akgec.ac.in"
               value={contactData.Email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border text-white border-[#92FAE0] rounded-lg outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
+              className="w-full px-4 py-2 md:py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative"
               required
             />
           </div>
           {/* Residency Status */}
           <div>
-            <p className="text-xl text-white mb-2">Residency Status</p>
-            <div className="flex gap-6 md:gap-20 text-white">
+            <p className="text-xl text-black mb-2">Residency Status</p>
+            <div className="flex gap-6 mt-6 md:gap-20 text-black">
               <label className="flex items-center gap-2 text-xl cursor-pointer">
                 <input
                   type="radio"
@@ -190,20 +216,23 @@ const Contact = () => {
               </label>
             </div>
           </div>
-          {/* ReCAPTCHA*/}
-          <div className="w-full">
-            <ReCAPTCHA
-              sitekey="6LfpsR0rAAAAACNNYWuA0N-E0YYC04SsfpI3nqiQ"
-              onChange={onSuccess}
-            />
-          </div>
+          {/* ReCAPTCHA */}
+<div className="w-full flex justify-center">
+  <div className="recaptcha-wrapper">
+    <ReCAPTCHA
+      sitekey="6LfpsR0rAAAAACNNYWuA0N-E0YYC04SsfpI3nqiQ"
+      onChange={onSuccess}
+    />
+  </div>
+</div>
+
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full mt-4 text-[#92FAE0] border text-xl border-[#92FAE0] active:scale-90 transition-transform duration-150 py-2 rounded-lg font-semibold outline-none bg-[#180B3Fe0] backdrop-blur-md z-10 relative"
+            className="w-full mt-2 md:mt-0 text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] border text-xl active:scale-90 transition-transform duration-150 py-2 font-semibold backdrop-blur-md z-10 relative"
           >
-            Next
+            SUBMIT
           </button>
         </form>
       </div>
