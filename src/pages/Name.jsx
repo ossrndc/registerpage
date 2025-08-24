@@ -67,6 +67,14 @@ const Name = () => {
           className="w-full h-full object-contain"
         />
       </div>
+      {/* Github Icon */}
+      <div className="fixed top-102 md:hidden xl:block right-6 md:top-58 rotate-4 md:right-110 z-60">
+        <img
+          src="/images/github.png"
+          alt="Cross"
+          className="w-10 sm:w-8 md:w-10 lg:w-20 h-auto max-w-full"
+        />
+      </div>
 
       {/* Dot Icon */}
       <div className="fixed top-130 md:hidden xl:block left-4 invert md:top-90 md:left-20 z-50">
