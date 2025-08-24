@@ -9,7 +9,7 @@ const Name = () => {
     StudentNO: "",
     Gender: "",
     Branch: "",
-    Year: "",
+    Domain: "",
   });
 
   const handleChange = (e) => {
@@ -26,7 +26,7 @@ const Name = () => {
       StudentNO: "",
       Gender: "",
       Branch: "",
-      Year: "",
+      Domain: "",
     });
 
     navigate("/contact", { state: { formData } }); // Navigate to the contact page
@@ -241,33 +241,33 @@ const Name = () => {
               </select>
             </div>
 
-            {/* Year */}
+            {/* DOMAIN */}
             <div className="w-full">
-              <label htmlFor="year" className="block text-xl text-black">
-                Year
+              <label htmlFor="domain" className="block text-xl text-black">
+                Domain
               </label>
               <select
-                id="Year"
-                name="Year"
-                value={formData.Year}
+                id="Domain"
+                name="Domain"
+                value={formData.Domain}
                 onChange={handleChange}
                 className="w-full px-4 py-2 md:py-3 border backdrop-blur-md text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] z-10 relative"
                 required
               >
                 <option value="" className="bg-[rgb(133,206,195)] text-black">
-                  Select Year
+                  Select Domain
                 </option>
                 <option
-                  value="1st"
+                  value="developer"
                   className="bg-[rgb(133,206,195)] text-black"
                 >
-                  1st
+                  Developer
                 </option>
                 <option
-                  value="2nd"
+                  value="designer"
                   className="bg-[rgb(133,206,195)] text-black"
                 >
-                  2nd
+                  Designer
                 </option>
               </select>
             </div>
