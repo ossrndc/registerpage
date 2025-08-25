@@ -6,7 +6,7 @@ const LoadingAnimation = () => {
       {/* Enhanced Logo Animation */}
       <div className="relative">
         {/* Glowing effect behind logo */}
-        <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-20 animate-pulse"></div>
+        {/* <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-20 animate-pulse"></div> */}
         
         {/* Logo with enhanced animations */}
         <img
