@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LoadingAnimation from "./LoadingAnimation";
 
 const Name = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
 
   const [formData, setFormData] = useState({
     Name: "",
@@ -11,6 +13,15 @@ const Name = () => {
     Branch: "",
     Domain: "",
   });
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,6 +42,11 @@ const Name = () => {
 
     navigate("/contact", { state: { formData } }); // Navigate to the contact page
   };
+
+  // Show loading animation
+  if (isLoading) {
+    return <LoadingAnimation />;
+  }
 
   return (
     <div className="w-full h-screen overflow-hidden md:overflow-auto p-6 md:p-20">
