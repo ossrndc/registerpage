@@ -2,7 +2,7 @@ import React from "react";
 
 const LoadingAnimation = () => {
   return (
-    <div className="w-full h-screen bg-black flex items-center justify-center">
+    <div className="w-full h-screen overflow-hidden bg-black flex items-center justify-center">
       {/* Enhanced Logo Animation */}
       <div className="relative">
         {/* Glowing effect behind logo */}
