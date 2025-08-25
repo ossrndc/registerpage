@@ -4,7 +4,7 @@ import Contact from './pages/Contact'
 import Payment from './pages/Payment'
 import Registered from './pages/Registered'
 import { Route, Routes } from 'react-router-dom'
-import Closed from './pages/Closed'
+// import Closed from './pages/Closed'
 
 const App = () => {
   return (
