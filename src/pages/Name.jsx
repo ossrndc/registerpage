@@ -20,6 +20,16 @@ const Name = () => {
       setIsLoading(false);
     }, 3000);
 
+    // Prevent viewport issues on mobile
+    const preventViewportShift = () => {
+      const viewport = document.querySelector('meta[name=viewport]');
+      if (viewport) {
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+      }
+    };
+
+    preventViewportShift();
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -49,7 +59,7 @@ const Name = () => {
   }
 
   return (
-    <div className="w-full h-screen overflow-hidden md:overflow-auto p-6 md:p-20">
+    <div className="w-full min-h-screen overflow-hidden md:overflow-auto p-6 md:p-20 flex flex-col">
       {/* OSS Logo */}
       <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
         <img
@@ -100,11 +110,11 @@ const Name = () => {
           className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto max-w-full"
         />
       </div> */}
-      <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-black">
+      <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-black flex-shrink-0">
         "INIT'25"
       </h1>
 
-      <div className="w-full max-w-[600px] mt-2 md:mt-6 mx-auto rounded-lg p-6">
+      <div className="w-full max-w-[600px] mt-2 md:mt-6 mx-auto rounded-lg p-6 flex-1 flex flex-col justify-center">
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           {/* Name */}
           <div>
