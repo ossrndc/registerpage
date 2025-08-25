@@ -20,7 +20,7 @@ const Registered = () => {
           className="w-10 sm:w-12 md:w-14"
         />
       </div>
-      <div className="absolute bottom-[260px]  md:bottom-[100px] right-4 md:right-10 z-10">
+      <div className="absolute bottom-[260px] hidden lg:block md:bottom-[100px] right-4 md:right-10 z-10">
         <img
           src="/images/zigzag.png"
           alt="Zigzag"

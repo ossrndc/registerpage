@@ -33,7 +33,7 @@ const Name = () => {
   };
 
   return (
-    <div className="w-full h-screen p-6 md:p-20">
+    <div className="w-full h-screen overflow-hidden md:overflow-auto p-6 md:p-20">
       {/* OSS Logo */}
       <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
         <img
@@ -67,23 +67,23 @@ const Name = () => {
           className="w-full h-full object-contain"
         />
       </div>
-      {/* Github Icon */}
-      <div className="fixed top-102 md:hidden xl:block right-6 md:top-58 rotate-4 md:right-110 z-60">
+      {/* Penguine Icon */}
+      <div className="fixed hidden lg:block top-102 md:hidden xl:block left-6 md:top-30 -rotate-46 md:left-100 z-60">
         <img
-          src="/images/github.png"
+          src="/images/penguine2.png"
           alt="Cross"
-          className="w-10 sm:w-8 md:w-10 lg:w-20 h-auto max-w-full"
+          className="w-10 sm:w-8 md:w-10 lg:w-18 h-auto max-w-full"
         />
       </div>
 
       {/* Dot Icon */}
-      <div className="fixed top-130 md:hidden xl:block left-4 invert md:top-90 md:left-20 z-50">
+      {/* <div className="fixed top-130 md:hidden xl:block left-4 invert md:top-90 md:left-20 z-50">
         <img
           src="/images/dot.png"
           alt="Cross"
           className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto max-w-full"
         />
-      </div>
+      </div> */}
       <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-black">
         "INIT'25"
       </h1>

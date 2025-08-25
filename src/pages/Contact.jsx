@@ -100,13 +100,13 @@ const Contact = () => {
         />
       </div>
       {/* Dot Icon */}
-      <div className="fixed top-130 md:hidden xl:block left-2 md:top-100 md:left-20 z-50">
+      {/* <div className="fixed top-130 md:hidden xl:block left-2 md:top-100 md:left-20 z-50">
         <img
           src="/images/dot.png"
           alt="Cross"
           className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto invert max-w-full"
         />
-      </div>
+      </div> */}
       {/* Arrow Icon */}
 
       <div className="fixed top-22 md:hidden xl:block right-10 md:top-36 md:right-60 z-60">
