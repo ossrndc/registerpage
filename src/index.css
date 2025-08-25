@@ -26,6 +26,52 @@ html, body {
   color: white;
 }
 
+/* Mobile viewport fix */
+:root {
+  --vh: 1vh;
+}
+
+/* Prevent mobile viewport issues */
+.mobile-container {
+  min-height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  .mobile-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent form shifting on mobile */
+  form {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Fix input focus issues on mobile */
+  input:focus,
+  select:focus {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Prevent viewport changes on mobile keyboard */
+@media screen and (max-height: 600px) {
+  .mobile-container {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
 .recaptcha-wrapper {
   transform: scale(0.85);   /* adjust for smaller size */
   transform-origin: 0 10;    /* scale from top-left */

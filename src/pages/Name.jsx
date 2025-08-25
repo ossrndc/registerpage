@@ -20,17 +20,31 @@ const Name = () => {
       setIsLoading(false);
     }, 3000);
 
-    // Prevent viewport issues on mobile
-    const preventViewportShift = () => {
+    // Mobile viewport fix
+    const fixMobileViewport = () => {
+      // Set viewport height to prevent mobile keyboard issues
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      
+      // Prevent viewport changes on mobile
       const viewport = document.querySelector('meta[name=viewport]');
       if (viewport) {
-        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, height=device-height');
       }
     };
 
-    preventViewportShift();
+    // Initial fix
+    fixMobileViewport();
 
-    return () => clearTimeout(timer);
+    // Fix on resize and orientation change
+    window.addEventListener('resize', fixMobileViewport);
+    window.addEventListener('orientationchange', fixMobileViewport);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', fixMobileViewport);
+      window.removeEventListener('orientationchange', fixMobileViewport);
+    };
   }, []);
 
   const handleChange = (e) => {
@@ -59,7 +73,7 @@ const Name = () => {
   }
 
   return (
-    <div className="w-full min-h-screen overflow-hidden md:overflow-auto p-6 md:p-20 flex flex-col">
+    <div className="w-full mobile-container overflow-hidden md:overflow-auto p-6 md:p-20 flex flex-col" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
       {/* OSS Logo */}
       <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
         <img
