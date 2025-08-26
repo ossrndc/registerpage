@@ -81,7 +81,7 @@ const Registered = () => {
           </p>
         </div>
 
-        {/* Social Links */}
+        
         <div className="flex items-center gap-3 md:gap-6 mt-2 md:mt-0">
           <h2 className="text-lg md:text-lg font-semibold text-black">
             Let's Connect :
