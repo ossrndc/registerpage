@@ -157,7 +157,7 @@ const Name = () => {
               id="StudentNO"
               type="text"
               name="StudentNO"
-              pattern="^\d{5}\S*$"
+              pattern="^24\d{3}[A-Za-z0-9]{5}$"
               maxLength="10"
               value={formData.StudentNO}
               onChange={handleChange}

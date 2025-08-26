@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate, useLocation } from "react-router-dom";
 
-
 const Contact = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
 
   // console.log("Backend URL:", backendUrl);
@@ -41,7 +40,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@akgec\.ac\.in$/;
+    const emailPattern = /^[A-Za-z]{3,}24\d{3}[A-Za-z0-9]{5}@akgec\.ac\.in$/;
     if (!emailPattern.test(contactData.Email)) {
       alert(
         "Please enter a valid AKGEC email address (e.g., yourname@akgec.ac.in)"
@@ -70,9 +69,18 @@ const Contact = () => {
           ...formData,
           ...contactData, // ✅ Normalizing key
         };
-        navigate("/registered", { state: { studentData, formData, contactData } });
+        navigate("/registered", {
+          state: { studentData, formData, contactData },
+        });
         // navigate("/payment", { state: { studentData, formData, contactData } });
         alert("You are registered for the event.");
+      } else if (
+        result.message &&
+        result.message.toLowerCase().includes("already registered")
+      ) {
+        alert("User is already registered.");
+      } else {
+        alert(result.message || "Registration failed.");
       }
     } catch (err) {
       console.error("Error submitting data:", err);
@@ -111,7 +119,6 @@ const Contact = () => {
 
       <div className="fixed top-22 md:hidden xl:block right-10 md:top-36 md:right-60 z-60">
         <div className="flex items-center rotate-[310deg] md:rotate-[300deg]">
-
           <div className="w-4 h-4 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[rgb(133,206,195)]"></div>
 
           <div
@@ -216,15 +223,14 @@ const Contact = () => {
             </div>
           </div>
           {/* ReCAPTCHA */}
-<div className="w-full flex justify-center">
-  <div className="recaptcha-wrapper">
-    <ReCAPTCHA
-      sitekey="6LfpsR0rAAAAACNNYWuA0N-E0YYC04SsfpI3nqiQ"
-      onChange={onSuccess}
-    />
-  </div>
-</div>
-
+          <div className="w-full flex justify-center">
+            <div className="recaptcha-wrapper">
+              <ReCAPTCHA
+                sitekey="6LfpsR0rAAAAACNNYWuA0N-E0YYC04SsfpI3nqiQ"
+                onChange={onSuccess}
+              />
+            </div>
+          </div>
 
           {/* Submit Button */}
           <button
