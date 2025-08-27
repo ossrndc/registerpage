@@ -14,7 +14,6 @@ const Name = () => {
     Domain: "",
   });
 
-  const [studentIdError, setStudentIdError] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,15 +47,13 @@ const Name = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Student ID validation function
   const validateStudentId = () => {
     const studentIdRegex =
       /^(?:24\d{0,8}|25(?=.*[A-Za-z])(?=.*-)[A-Za-z0-9-]{0,8})$/;
     if (!studentIdRegex.test(formData.StudentNO)) {
-      setStudentIdError("Invalid Student ID");
+      alert("Invalid Student ID");
       return false;
     } else {
-      setStudentIdError("");
       return true;
     }
   };
@@ -149,15 +146,10 @@ const Name = () => {
               maxLength="10"
               value={formData.StudentNO}
               onChange={handleChange}
-              onBlur={validateStudentId} // validate when user leaves input
-              className={`w-full px-4 py-3 border ${
-                studentIdError ? "border-red-500" : "border-black"
-              } text-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-10 relative`}
+              onBlur={validateStudentId}
               required
             />
-            {studentIdError && (
-              <p className="text-red-500 text-sm mt-1">{studentIdError}</p>
-            )}
+            
           </div>
 
           {/* Gender */}
