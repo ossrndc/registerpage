@@ -157,7 +157,7 @@ const Name = () => {
               id="StudentNO"
               type="text"
               name="StudentNO"
-              pattern="^24\d{3}[A-Za-z0-9]*$"
+              pattern="^(?:24\d{0,8}|25[A-Za-z0-9]{0,8})$"
               maxLength="10"
               value={formData.StudentNO}
               onChange={handleChange}
