@@ -40,7 +40,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const emailPattern = /^[A-Za-z]{3,}(?:24\d{0,8}|25[A-Za-z0-9]{0,8})@akgec\.ac\.in$/;
+    const emailPattern = /^[a-z]{3,}(?:24\d{0,8}|25(?=.*[A-Za-z])(?=.*-)[A-Za-z0-9-]{0,8})@akgec\.ac\.in$/;
     if (!emailPattern.test(contactData.Email)) {
       alert(
         "Please enter a valid AKGEC email address (e.g., nameStudentId@akgec.ac.in)"
