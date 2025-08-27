@@ -51,7 +51,7 @@ const Name = () => {
     const studentIdRegex =
       /^(?:24\d{0,8}|25(?=.*[A-Za-z])(?=.*-)[A-Za-z0-9-]{0,8})$/;
     if (!studentIdRegex.test(formData.StudentNO)) {
-      alert("Only for 2nd Year!!");
+      alert("Invalid StudentID. Only for 2nd Year students!!");
       return false;
     } else {
       return true;
