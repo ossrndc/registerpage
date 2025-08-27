@@ -50,11 +50,10 @@ const Name = () => {
 
   // Student ID validation function
   const validateStudentId = () => {
-    const studentIdRegex = /^(?:24\d{0,8}|25(?=.*[A-Za-z])(?=.*-)[A-Za-z0-9-]{0,8})$/;
+    const studentIdRegex =
+      /^(?:24\d{0,8}|25(?=.*[A-Za-z])(?=.*-)[A-Za-z0-9-]{0,8})$/;
     if (!studentIdRegex.test(formData.StudentNO)) {
-      setStudentIdError(
-        "Invalid Student ID"
-      );
+      setStudentIdError("Invalid Student ID");
       return false;
     } else {
       setStudentIdError("");
@@ -89,11 +88,35 @@ const Name = () => {
           className="w-16 sm:w-20 md:w-28 h-auto max-w-full"
         />
       </div>
-
+      {/* Arrow Icon */}{" "}
+      <div className="fixed top-22 md:hidden xl:block right-10 md:top-36 md:right-60 z-60">
+        {" "}
+        <div className="flex items-center rotate-[310deg] md:rotate-[300deg]">
+          {" "}
+          <div className="w-4 h-4 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[rgb(133,206,195)]"></div>{" "}
+          <div className="w-0 h-0 border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent border-l-[30px] border-l-[rgb(133,206,195)] sm:border-t-[28px] sm:border-b-[28px] sm:border-l-[42px] md:border-t-[40px] md:border-b-[40px] md:border-l-[60px]"></div>{" "}
+        </div>{" "}
+      </div>{" "}
+      <div className="fixed top-30 md:hidden xl:block right-0 sm:top-40 sm:-right-10 md:top-50 md:right-0 z-50 h-20 w-20 sm:h-48 sm:w-48 md:h-80 md:w-80">
+        {" "}
+        <img
+          src="/images/line.png"
+          alt="line"
+          className="w-full h-full object-contain"
+        />{" "}
+      </div>{" "}
+      {/* Penguine Icon */}{" "}
+      <div className="fixed hidden lg:block top-102 md:hidden xl:block left-6 md:top-30 -rotate-46 md:left-100 z-60">
+        {" "}
+        <img
+          src="/images/penguine2.png"
+          alt="Cross"
+          className="w-10 sm:w-8 md:w-10 lg:w-18 h-auto max-w-full"
+        />{" "}
+      </div>
       <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-black flex-shrink-0">
         "INIT'25"
       </h1>
-
       <div className="w-full max-w-[600px] mt-2 md:mt-6 mx-auto rounded-lg p-6 flex-1 flex flex-col justify-center">
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           {/* Name */}
