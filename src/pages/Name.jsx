@@ -147,6 +147,7 @@ const Name = () => {
               value={formData.StudentNO}
               onChange={handleChange}
               onBlur={validateStudentId}
+              className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(133,206,195)] backdrop-blur-md z-70 relative"
               required
             />
             
