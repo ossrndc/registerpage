@@ -125,7 +125,7 @@ const Name = () => {
               id="Name"
               type="text"
               name="Name"
-              pattern="[A-Za-z]{2,}( [A-Za-z]{2,})?"
+              pattern="^\s*[A-Za-z]{2,}( +[A-Za-z]{2,})*\s*$"
               title="Enter a valid name (letters only, at least 2 characters each part)"
               value={formData.Name}
               onChange={handleChange}
