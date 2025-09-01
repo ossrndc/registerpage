@@ -20,8 +20,8 @@ const App = () => {
       {/* <Payment /> */}
       {/* <Registered /> */}
 
-      {/* <Test /> */}
-      < Closed />
+      <Test />
+      {/* < Closed /> */}
     </div>
   )
 }
