@@ -1,0 +1,98 @@
+/* Container */
+.text-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #101010; 
+  color: #fff;
+  padding: 2rem;
+}
+
+/* Card-like content */
+.text-content {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(30, 30, 30, 0.98);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid #232323;
+  box-shadow: 0 4px 32px 0 #10101088;
+}
+
+/* INIT'25 styled like before */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(133, 206, 195);
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid rgb(133, 206, 195);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  letter-spacing: 0.08em;
+}
+
+/* Team OSS styled in white */
+.subtitle {
+  font-size: 1.3rem;
+  color: #fff;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
+}
+
+/* Description text */
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  line-height: 1.6;
+}
+
+/* Highlighted part in accent cyan */
+.highlight {
+  color: rgb(133, 206, 195);
+  font-weight: 600;
+}
+
+/* Button-style link */
+.test-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #101010;
+  background: rgb(133, 206, 195);
+  border: none;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.test-link:hover {
+  background: #fff;
+  color: #101010;
+  box-shadow: 0 0 10px rgb(133, 206, 195);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .text-content {
+    padding: 1.5rem 1.2rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .test-link {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

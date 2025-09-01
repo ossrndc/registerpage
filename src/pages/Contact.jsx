@@ -67,7 +67,7 @@ const Contact = () => {
         // Merge formData and contactData into one flat object as per your schema
         const studentData = {
           ...formData,
-          ...contactData, // ✅ Normalizing key
+          ...contactData, 
         };
         navigate("/registered", {
           state: { studentData, formData, contactData },
