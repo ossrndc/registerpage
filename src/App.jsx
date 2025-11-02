@@ -11,17 +11,17 @@ const App = () => {
   return (
     <div>
       <Routes>
-        {/* <Route path="/" element={<Name />} /> */}
-        {/* <Route path="/contact" element={<Contact />} /> */}
-        {/* <Route path="/payment" element={<Payment />} /> */}
-        {/* <Route path="/registered" element={<Registered />} /> */}
+        <Route path="/" element={<Name />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/registered" element={<Registered />} />
       </Routes>
       {/* <Contact /> */}
       {/* <Payment /> */}
       {/* <Registered /> */}
 
       {/* <Test /> */}
-      < Closed />
+      {/* < Closed /> */}
     </div>
   )
 }
