@@ -8,20 +8,8 @@
 
 html, body {
   inset: 0;
-  background-color: rgb(232,236,239);
-  background: 
-    radial-gradient(ellipse at bottom, rgba(233, 110, 172, 0.06) 0%, transparent 70%) bottom,
-    radial-gradient(ellipse at right, rgba(233, 110, 172, 0.04) 0%, transparent 70%) right,
-    radial-gradient(circle at center, rgba(233, 110, 172, 0.05) 0%, transparent 60%) center,
-    linear-gradient(to right, rgb(209,212,215) 1px, transparent 1px), /* vertical lines */
-    linear-gradient(to bottom, rgb(209,212,215) 1px, transparent 1px), /* horizontal lines */
-    rgb(232,236,239);
-  background-size: 
-    100% 25%,  
-    50% 100%,   
-    100% 100%,  
-    70px 70px,  
-    70px 70px;
+  background: linear-gradient(to bottom, black, rgb(6, 58, 60), rgb(52, 116, 119), white);
+
   background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
   color: white;
 }
