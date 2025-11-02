@@ -53,7 +53,7 @@ const Registered = () => {
       </div> */}
 
       {/* Combined Image, Text and Social Links */}
-      <div className="max-w-screen-md px-4 mt-44 md:mt-62 flex flex-col items-center space-y-2 md:space-y-4">
+      <div className="max-w-screen-md px-4 mt-62 flex flex-col items-center space-y-2 md:space-y-4">
         {/* Laptop Image */}
         {/* <div className="flex justify-center mt-18 md:mt-0 items-center">
           <img
