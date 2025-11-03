@@ -71,7 +71,7 @@ const Registered = () => {
               *Check your spam folder(email)*
             </span>
           </h1>
-          <p className="text-md sm:text-lg md:text-lg text-white mt-2 md:mt-2">
+          <p className="text-md sm:text-lg md:text-lg text-white mt-2 md:mt-2 relative z-50">
             For more information, check out our
             <span className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-2 py-1 rounded-md font-extrabold mx-1 inline-block">
               Team OSS

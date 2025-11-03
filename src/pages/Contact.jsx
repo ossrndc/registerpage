@@ -8,7 +8,7 @@ const Contact = () => {
   const { executeRecaptcha } = useGoogleReCaptcha(); 
 
   const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL || "https://oss-ea26.onrender.com";
-  console.log("Backend URL:", backendUrl);
+  // console.log("Backend URL:", backendUrl);
   const { formData } = location.state || {};
 
   const [contactData, setContactData] = useState({
@@ -79,7 +79,7 @@ const Contact = () => {
           className="w-16 sm:w-20 md:w-28 h-auto invert max-w-full"
         />
       </div>
-      <div className="absolute top-8 left-0 md:left-40 lg:left-80 xl:left-140">
+      <div className="absolute top-8 left-0 md:left-40 lg:left-80 z-0 xl:left-140">
         <img
           src="/images/element.png"
           alt="Element"
@@ -88,7 +88,7 @@ const Contact = () => {
       </div>
       <h1 className="text-3xl text-center mt-16 md:mt-0 text-white font-bold">"HOUR OF CODE 4.0"</h1>
 
-      <form onSubmit={handleSubmit} className="max-w-[600px] mx-auto mt-6 flex flex-col z-50 gap-6">
+      <form onSubmit={handleSubmit} className="max-w-[600px] mx-auto mt-6 flex flex-col relative z-50 gap-6">
         <div>
           <label className="text-white text-xl block mb-1">Contact Number</label>
           <input
@@ -99,7 +99,7 @@ const Contact = () => {
             required
             value={contactData.contact}
             onChange={handleChange}
-            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 text-black border border-black"
+            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 relative text-black border border-black"
           />
         </div>
 
@@ -126,6 +126,7 @@ const Contact = () => {
                 value="Hostler"
                 checked={contactData.Residence === "Hostler"}
                 onChange={handleChange}
+                className="accent-black"
               />
               Hostler
             </label>
@@ -136,6 +137,7 @@ const Contact = () => {
                 value="Day Scholar"
                 checked={contactData.Residence === "Day Scholar"}
                 onChange={handleChange}
+                className="accent-black"
               />
               Day Scholar
             </label>

@@ -225,7 +225,7 @@ const Name = () => {
               </select>
             </div>
 
-            <div className="w-full">
+            {/* <div className="w-full">
               <label htmlFor="Domain" className="block text-xl text-white">
                 Domain
               </label>
@@ -241,7 +241,7 @@ const Name = () => {
                 <option value="developer">Developer</option>
                 <option value="designer">Designer</option>
               </select>
-            </div>
+            </div> */}
           </div>
 
           <button
