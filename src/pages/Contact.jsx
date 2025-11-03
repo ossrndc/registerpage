@@ -24,7 +24,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const emailPattern = /^[a-z]{3,}(?:22|23|24)[\dDd-]{3,8}@akgec\.ac\.in$/;
+    const emailPattern = /^[a-z]{3,}(?:22|23|24|25)[\dDd-]{3,8}@akgec\.ac\.in$/;
     if (!emailPattern.test(contactData.Email)) {
       alert("Please enter a valid AKGEC email address.");
       return;
