@@ -8,7 +8,7 @@ const Test = () => {
         <h2 className="subtitle">Team OSS</h2>
 
         <p className="description">
-          This is the official link for the{" "}
+          This is the official link for the
           <span className="highlight">Team OSS Recruitment Test</span>.
           Click below to give your test.
         </p>

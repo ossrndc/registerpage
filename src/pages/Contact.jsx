@@ -234,7 +234,7 @@ const Contact = () => {
           <div className="w-full flex justify-center">
             <div className="recaptcha-wrapper">
               <ReCAPTCHA
-                sitekey="6LfpsR0rAAAAACNNYWuA0N-E0YYC04SsfpI3nqiQ"
+                sitekey="6LccNwAsAAAAALkQ3X83tnDTLXm-Z_xfLWbGfbbc"
                 onChange={onSuccess}
               />
             </div>
