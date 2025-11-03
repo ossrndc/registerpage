@@ -99,7 +99,7 @@ const Contact = () => {
             required
             value={contactData.contact}
             onChange={handleChange}
-            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 border border-black"
+            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 text-black border border-black"
           />
         </div>
 
@@ -112,7 +112,7 @@ const Contact = () => {
             required
             value={contactData.Email}
             onChange={handleChange}
-            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 border border-black"
+            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 text-black border border-black"
           />
         </div>
 
