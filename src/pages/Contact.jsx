@@ -1,37 +1,21 @@
 import { useState, useEffect } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Contact = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { executeRecaptcha } = useGoogleReCaptcha(); 
 
-  const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
-
-  // console.log("Backend URL:", backendUrl);
-  // Retrieve form data passed from Name.jsx
+  const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL || "https://oss-ea26.onrender.com";
+  console.log("Backend URL:", backendUrl);
   const { formData } = location.state || {};
-
-  const [captchaStatus, setCaptchaStatus] = useState(false);
-
-  const [Token, setToken] = useState("");
-  const onSuccess = (key) => {
-    // console.log(key);
-    setToken(key);
-    setCaptchaStatus(true);
-  };
 
   const [contactData, setContactData] = useState({
     contact: "",
     Email: "",
     Residence: "",
   });
-
-  useEffect(() => {
-    if (formData) {
-      console.log("Form Data received");
-    }
-  }, [formData]);
 
   const handleChange = (e) => {
     setContactData({ ...contactData, [e.target.name]: e.target.value });
@@ -40,41 +24,38 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const emailPattern = /^[a-z]{3,}(?:23\d{0,8}|24\d{0,8}|25(?=.*[A-Za-z])(?=.*-)[A-Za-z0-9-]{0,8})@akgec\.ac\.in$/;
     const emailPattern = /^[a-z]{3,}(?:22|23|24)[\dDd-]{3,8}@akgec\.ac\.in$/;
     if (!emailPattern.test(contactData.Email)) {
-      alert(
-        "Please enter a valid AKGEC email address (e.g., nameStudentId@akgec.ac.in)"
-      );
+      alert("Please enter a valid AKGEC email address.");
       return;
     }
 
+    if (!executeRecaptcha) {
+      alert("reCAPTCHA not yet ready.");
+      return;
+    }
+
+    // ✅ Get the token from Google reCAPTCHA v3
+    const token = await executeRecaptcha("form_submit");
+
+    const payload = {
+      Token: token,
+      formData,
+      contactData,
+    };
+
     try {
-      const payload = {
-        Token,
-        formData,
-        contactData,
-      };
       const res = await fetch(`${backendUrl}/api/v1/recaptcha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
       const result = await res.json();
-      // console.log("Payload being sent to backend:", payload);
-      // console.log(formData)
+
       if (result.success) {
         alert("CAPTCHA verified!");
-        // Merge formData and contactData into one flat object as per your schema
-        const studentData = {
-          ...formData,
-          ...contactData, 
-        };
-        navigate("/registered", {
-          state: { studentData, formData, contactData },
-        });
-        // navigate("/payment", { state: { studentData, formData, contactData } });
-        alert("You are registered for the event.");
+        const studentData = { ...formData, ...contactData };
+        navigate("/registered", { state: { studentData } });
       } else if (
         result.message &&
         result.message.toLowerCase().includes("already registered")
@@ -84,171 +65,78 @@ const Contact = () => {
         alert(result.message || "Registration failed.");
       }
     } catch (err) {
-      console.error("Error submitting data:", err);
+      console.error("Error:", err);
       alert("Something went wrong.");
     }
   };
 
   return (
     <div className="w-full h-screen overflow-hidden p-6 md:p-20">
-      {/* OSS Logo */}
-      <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
-        <img
-          src="/OSS.png"
-          alt="OSS Logo"
-          className="w-16 sm:w-20 md:w-28 h-auto invert max-w-full"
-        />
-      </div>
-      <div className="absolute top-8 left-0 md:left-40 lg:left-80 xl:left-140 z-0">
-        <img
-          src="/images/element.png"
-          alt="Element"
-          className=""
-        />
-      </div>
+      <h1 className="text-3xl text-center text-white font-bold">"HOUR OF CODE 4.0"</h1>
 
-      {/* Github Icon */}
-      {/* <div className="fixed top-30 md:hidden xl:block left-4 md:top-40 md:left-80 z-70">
-        <img
-          src="/images/github.png"
-          alt="Cross"
-          className="w-8 sm:w-18 md:w-16 lg:w-20 h-auto max-w-full"
-        />
-      </div> */}
-      {/* Dot Icon */}
-      {/* <div className="fixed top-130 md:hidden xl:block left-2 md:top-100 md:left-20 z-50">
-        <img
-          src="/images/dot.png"
-          alt="Cross"
-          className="w-5 sm:w-8 md:w-10 lg:w-14 h-auto invert max-w-full"
-        />
-      </div> */}
-      {/* Arrow Icon */}
-
-      {/* <div className="fixed top-22 md:hidden xl:block right-10 md:top-36 md:right-60 z-60">
-        <div className="flex items-center rotate-[310deg] md:rotate-[300deg]">
-          <div className="w-4 h-4 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[rgb(133,206,195)]"></div>
-
-          <div
-            className="w-0 h-0 
-      border-t-[20px] border-t-transparent 
-      border-b-[20px] border-b-transparent 
-      border-l-[30px] border-l-[rgb(133,206,195)]
-      sm:border-t-[28px] sm:border-b-[28px] sm:border-l-[42px]
-      md:border-t-[40px] md:border-b-[40px] md:border-l-[60px]"
-          ></div>
+      <form onSubmit={handleSubmit} className="max-w-[600px] mx-auto mt-6 flex flex-col gap-6">
+        <div>
+          <label className="text-white text-xl block mb-1">Contact Number</label>
+          <input
+            type="tel"
+            name="contact"
+            pattern="[6-9]{1}[0-9]{9}"
+            maxLength="10"
+            required
+            value={contactData.contact}
+            onChange={handleChange}
+            className="w-full px-4 py-2 rounded-lg bg-gray-200 border border-black"
+          />
         </div>
-      </div> */}
 
-      {/* <div className="fixed md:hidden xl:block top-30 right-0 sm:top-40 sm:-right-10 md:top-50 md:right-0 z-50 h-20 w-20 sm:h-48 sm:w-48 md:h-80 md:w-80">
-        <img
-          src="/images/line.png"
-          alt="line"
-          className="w-full h-full object-contain"
-        />
-      </div> */}
-      {/* Penguine Icon */}
-      {/* <div className="fixed top-60 md:hidden xl:block right-6 md:top-58 rotate-4 md:right-110 z-60">
-        <img
-          src="/images/penguine2.png"
-          alt="Cross"
-          className="w-8 sm:w-8 md:w-10 lg:w-20 h-auto max-w-full"
-        />
-      </div> */}
-      {/* JS Icon */}
-      {/* <div className="fixed hidden top-140 xl:block right-4 md:top-140 md:right-80 z-50">
-        <img
-          src="/images/js.png"
-          alt="Cross"
-          className="w-16 sm:w-18 md:w-26 lg:w-30 h-auto max-w-full"
-        />
-      </div> */}
-      <h1 className="text-3xl md:text-4xl mt-10 md:mt-0 text-center font-bold text-white">
-        "HOUR OF CODE 4.0"
-      </h1>
+        <div>
+          <label className="text-white text-xl block mb-1">Email Address</label>
+          <input
+            type="email"
+            name="Email"
+            placeholder="studentxxxxxxx@akgec.ac.in"
+            required
+            value={contactData.Email}
+            onChange={handleChange}
+            className="w-full px-4 py-2 rounded-lg bg-gray-200 border border-black"
+          />
+        </div>
 
-      <div className="w-full max-w-[600px] mt-6 mx-auto rounded-lg p-6">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-          {/* Contact No */}
-          <div>
-            <label htmlFor="contact" className="block text-xl text-white">
-              Contact Number
-            </label>
-            <input
-              id="contact"
-              type="tel"
-              pattern="[6-9]{1}[0-9]{9}"
-              maxLength="10"
-              name="contact"
-              value={contactData.contact}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(175,181,181)] backdrop-blur-md z-70 relative"
-              required
-            />
-          </div>
-          {/* Email */}
-          <div>
-            <label htmlFor="Email" className="block text-xl text-white">
-              Email Address
-            </label>
-            <input
-              id="Email"
-              type="email"
-              name="Email"
-              placeholder="studentxxxxxxx@akgec.ac.in"
-              value={contactData.Email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border text-black border-black rounded-lg outline-none bg-[rgb(175,181,181)] backdrop-blur-md z-10 relative"
-              required
-            />
-          </div>
-          {/* Residency Status */}
-          <div>
-            <p className="text-xl text-white mb-2">Residency Status</p>
-            <div className="flex gap-6 mt-6 md:gap-20 text-white">
-              <label className="flex items-center gap-2 text-xl cursor-pointer">
-                <input
-                  type="radio"
-                  name="Residence"
-                  value="Hostler"
-                  checked={contactData.Residence === "Hostler"}
-                  onChange={handleChange}
-                  className="accent-black"
-                />
-                Hostler
-              </label>
-              <label className="flex items-center gap-2 text-xl cursor-pointer">
-                <input
-                  type="radio"
-                  name="Residence"
-                  value="Day Scholar"
-                  checked={contactData.Residence === "Day Scholar"}
-                  onChange={handleChange}
-                  className="accent-black"
-                />
-                Day Scholar
-              </label>
-            </div>
-          </div>
-          {/* ReCAPTCHA */}
-          <div className="w-full flex justify-center">
-            <div className="recaptcha-wrapper">
-              <ReCAPTCHA
-                sitekey="6LccNwAsAAAAALkQ3X83tnDTLXm-Z_xfLWbGfbbc"
-                onChange={onSuccess}
+        <div>
+          <p className="text-white text-xl mb-2">Residency Status</p>
+          <div className="flex gap-6 text-white">
+            <label className="flex items-center gap-2 text-lg">
+              <input
+                type="radio"
+                name="Residence"
+                value="Hostler"
+                checked={contactData.Residence === "Hostler"}
+                onChange={handleChange}
               />
-            </div>
+              Hostler
+            </label>
+            <label className="flex items-center gap-2 text-lg">
+              <input
+                type="radio"
+                name="Residence"
+                value="Day Scholar"
+                checked={contactData.Residence === "Day Scholar"}
+                onChange={handleChange}
+              />
+              Day Scholar
+            </label>
           </div>
+        </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full mt-2 md:mt-0 text-black border-black rounded-lg outline-none bg-[rgb(218,217,217)] border text-xl active:scale-90 transition-transform duration-150 py-2 font-semibold backdrop-blur-md z-10 relative"
-          >
-            SUBMIT
-          </button>
-        </form>
-      </div>
+        {/* ✅ No visible captcha box needed for v3 */}
+
+        <button
+          type="submit"
+          className="w-full py-3 bg-gray-300 border border-black text-black text-lg font-semibold rounded-lg hover:bg-gray-400 active:scale-95 transition-transform"
+        >
+          SUBMIT
+        </button>
+      </form>
     </div>
   );
 };
