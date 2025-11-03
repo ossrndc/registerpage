@@ -72,9 +72,23 @@ const Contact = () => {
 
   return (
     <div className="w-full h-screen overflow-hidden p-6 md:p-20">
-      <h1 className="text-3xl text-center text-white font-bold">"HOUR OF CODE 4.0"</h1>
+      <div className="fixed top-4 left-4 md:top-10 md:left-20 z-50">
+        <img
+          src="/OSS.png"
+          alt="OSS Logo"
+          className="w-16 sm:w-20 md:w-28 h-auto invert max-w-full"
+        />
+      </div>
+      <div className="absolute top-8 left-0 md:left-40 lg:left-80 xl:left-140">
+        <img
+          src="/images/element.png"
+          alt="Element"
+          className=""
+        />
+      </div>
+      <h1 className="text-3xl text-center mt-16 md:mt-0 text-white font-bold">"HOUR OF CODE 4.0"</h1>
 
-      <form onSubmit={handleSubmit} className="max-w-[600px] mx-auto mt-6 flex flex-col gap-6">
+      <form onSubmit={handleSubmit} className="max-w-[600px] mx-auto mt-6 flex flex-col z-50 gap-6">
         <div>
           <label className="text-white text-xl block mb-1">Contact Number</label>
           <input
@@ -85,7 +99,7 @@ const Contact = () => {
             required
             value={contactData.contact}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-gray-200 border border-black"
+            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 border border-black"
           />
         </div>
 
@@ -98,7 +112,7 @@ const Contact = () => {
             required
             value={contactData.Email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-gray-200 border border-black"
+            className="w-full px-4 py-2 z-50 rounded-lg bg-gray-200 border border-black"
           />
         </div>
 
@@ -132,7 +146,7 @@ const Contact = () => {
 
         <button
           type="submit"
-          className="w-full py-3 bg-gray-300 border border-black text-black text-lg font-semibold rounded-lg hover:bg-gray-400 active:scale-95 transition-transform"
+          className="w-full py-3 bg-gray-300 border border-black text-black text-lg font-semibold rounded-lg hover:bg-gray-400 active:scale-95 z-50 transition-transform"
         >
           SUBMIT
         </button>
