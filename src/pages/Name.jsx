@@ -169,7 +169,7 @@ const Name = () => {
           {/* Gender */}
           <div>
             <p className="text-white tracking-tight text-xl mb-2">Gender</p>
-            <div className="flex flex-wrap gap-6 md:gap-10 text-white">
+            <div className="flex flex-wrap gap-6 md:gap-32 z-50 text-white">
               <label className="flex items-center gap-1 text-xl cursor-pointer">
                 <input
                   type="radio"
@@ -181,7 +181,7 @@ const Name = () => {
                 />
                 Male
               </label>
-              <label className="flex items-center gap-1 text-xl cursor-pointer">
+              <label className="flex items-center gap-1 text-xl z-50 cursor-pointer">
                 <input
                   type="radio"
                   name="Gender"
