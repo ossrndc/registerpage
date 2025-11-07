@@ -4,12 +4,12 @@ const Test = () => {
   return (
     <div className="text-container">
       <div className="text-content">
-        <h1 className="title">INIT'25</h1>
+        <h1 className="title">HOUR OF CODE 4.0</h1>
         <h2 className="subtitle">Team OSS</h2>
 
         <p className="description">
           This is the official link for the
-          <span className="highlight">Team OSS Recruitment Test</span>.
+          <span className="highlight">ACM Test</span>.
           Click below to give your test.
         </p>
 
@@ -19,7 +19,7 @@ const Test = () => {
           rel="noopener noreferrer"
           className="test-link"
         >
-          Give Test
+          Game On
         </a>
       </div>
     </div>

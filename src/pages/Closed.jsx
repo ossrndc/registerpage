@@ -5,11 +5,11 @@ const Closed = () => {
   return (
     <div className="closed-container">
       <div className="closed-content">
-        <h1 className="title">INIT'25</h1>
+        <h1 className="title">HOUR OF CODE 4.0</h1>
         <h2 className="subtitle">Team OSS</h2>
         
         <div className="project-info">
-          <p>Registration for INIT'25 is now officially closed.</p>
+          <p>Registration for HOUR OF CODE 4.0 is now officially closed.</p>
           <p>Thank you for your overwhelming interest and support!</p>
           <p>For updates and future events, stay connected with us:</p>
           <p>

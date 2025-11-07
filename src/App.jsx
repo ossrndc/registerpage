@@ -10,18 +10,18 @@ import Test from './pages/Test'
 const App = () => {
   return (
     <div>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Name />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/registered" element={<Registered />} />
-      </Routes>
+      </Routes> */}
       {/* <Contact /> */}
       {/* <Payment /> */}
       {/* <Registered /> */}
 
       {/* <Test /> */}
-      {/* < Closed /> */}
+      < Closed />
     </div>
   )
 }
