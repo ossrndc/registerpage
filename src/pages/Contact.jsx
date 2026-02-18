@@ -394,7 +394,8 @@ const Contact = () => {
       return;
     }
 
-    const emailPattern = /^[a-z]{3,}(?:22|23|24|25)[\dDd-]{3,8}@akgec\.ac\.in$/;
+  const emailPattern = /^[a-z]{3,}(?:24|25)[0-9Dd-]{3,8}@akgec\.ac\.in$/;
+
     if (!emailPattern.test(contactData.Email)) {
       alert("Please enter a valid AKGEC email address.");
       return;
@@ -447,6 +448,12 @@ const Contact = () => {
               <div className="w-5 h-5 rounded-full border-[3px] border-black bg-[#f43f5e]"></div>
             </div>
           </div>
+          <div className="fixed top-4 left-4 z-50">
+        <img
+          src="/OSS.png"
+          alt="OSS Logo"
+          className="w-16 md:w-20 h-auto drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] invert"/>
+        </div>
 
           <form onSubmit={handleSubmit} className="p-6 md:p-8 flex flex-col gap-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -460,7 +467,7 @@ const Contact = () => {
                 <input 
                   type="email" 
                   name="Email" 
-                  placeholder="e.g. name23120xx@akgec.ac.in" 
+                  placeholder="e.g. name25120xx@akgec.ac.in" 
                   required 
                   value={contactData.Email} 
                   onChange={handleChange} 
