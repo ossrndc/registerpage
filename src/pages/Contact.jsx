@@ -389,7 +389,7 @@ const Contact = () => {
     const txId = contactData.transactionId.trim().toUpperCase();
     const utrRegex = /^[A-Z0-9]+$/;
 
-    if (!txId || txId.length < 10 || !utrRegex.test(txId)) {
+    if (!txId || txId.length < 13 || !utrRegex.test(txId)) {
       alert("Please enter a valid Transaction ID / UTR Number (e.g., HDBI520355).");
       return;
     }
