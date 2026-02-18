@@ -411,17 +411,20 @@ const Contact = () => {
     const payload = { Token: token, formData, contactData: { ...contactData, transactionId: txId } };
 
     try {
+      // console.log("Sending payload to server:", payload);
       const res = await fetch(`${backendUrl}/api/v1/recaptcha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
       const result = await res.json();
+      // console.log("Server response:", result);
       
       if (result.success) {
         // FIX: Ensuring studentData uses the same uppercased txId as the payload
         const studentData = { ...formData, ...contactData, transactionId: txId };
         navigate("/registered", { state: { studentData } });
+        // console.log("Registration successful:", studentData);
       } else {
         alert(result.message || "Registration failed.");
       }
