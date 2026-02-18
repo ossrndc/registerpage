@@ -21,7 +21,7 @@ const Test = () => {
   return (
     <div className="text-container">
       <div className="text-content">
-        <h1 className="title">HOUR OF CODE 4.0</h1>
+        <h1 className="title">Commit 03</h1>
         <h2 className="subtitle">Team OSS</h2>
 
         <p className="description">
