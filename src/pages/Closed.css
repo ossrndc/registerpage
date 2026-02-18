@@ -1,14 +1,14 @@
-.closed-container {
+ .closed-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #101010; /* Premium minimalist black */
-  color: #fff;
+   color: #fff;
   padding: 2rem;
   position: relative;
   overflow: hidden;
-}
+} 
 
 .closed-content {
   max-width: 480px;
@@ -21,22 +21,22 @@
   z-index: 1;
   border: 1px solid #232323;
   box-shadow: 0 4px 32px 0 #10101088;
-}
+} 
 
-.title {
+ .title {
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.08em;
   margin-bottom: 0.5rem;
   border-bottom: 3px solid rgb(133,206,195); /* Neon green underline */
-  display: inline-block;
+   display: inline-block;
   padding-bottom: 0.2em;
-}
+} 
 
 .subtitle {
   font-size: 1.3rem;
-  color: rgb(133,206,195); /* Neon green */
+  color: rgb(133,206,195); 
   font-family: 'Fira Mono', 'Consolas', monospace;
   margin-bottom: 2rem;
   letter-spacing: 0.04em;
@@ -72,4 +72,5 @@
   .subtitle {
     font-size: 1.1rem;
   }
-}
+
+}   
