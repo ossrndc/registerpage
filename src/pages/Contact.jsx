@@ -424,7 +424,6 @@ const Contact = () => {
         // FIX: Ensuring studentData uses the same uppercased txId as the payload
         const studentData = { ...formData, ...contactData, transactionId: txId };
         navigate("/registered", { state: { studentData } });
-        // console.log("Registration successful:", studentData);
       } else {
         alert(result.message || "Registration failed.");
       }
