@@ -386,7 +386,7 @@ const Contact = () => {
     e.preventDefault();
 
     const txId = contactData.transactionId.trim().toUpperCase();
-    if (txId.length < 13) {
+    if (txId.length < 10) {
       alert("Invalid Transaction ID.");
       return;
     }

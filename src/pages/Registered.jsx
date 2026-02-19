@@ -397,7 +397,7 @@ const Registered = () => {
             {/* Instruction Block - Tightened gaps */}
             <div className="flex flex-col gap-2 max-w-sm mx-auto mb-4">
               <p className="text-[11px] md:text-sm font-black text-black uppercase leading-tight">
-                Payment verified. We'll add you to the WhatsApp group shortly.
+                Your payment is under verification. Once verified, you’ll be added to the TEAM OSS WhatsApp group within 24 hours.
               </p>
               
               <div className="space-y-1">
