@@ -1247,7 +1247,7 @@ const Name = () => {
                 <div className="flex gap-2">
                   {["male", "female"].map((g) => (
                     <label key={g} className={`flex-1 flex items-center justify-center py-2 md:py-4 border-[2px] md:border-[4px] border-black rounded-lg md:rounded-2xl cursor-pointer transition-all font-black uppercase text-xs md:text-lg ${formData.Gender === g ? 'bg-[#10b981] text-black translate-y-0.5' : 'bg-white text-black shadow-[2px_2px_0px_rgba(0,0,0,1)]'}`}>
-                      <input type="radio" name="Gender" value={g} checked={formData.Gender === g} onChange={handleChange} className="hidden" />
+                      <input type="radio" name="Gender" value={g} checked={formData.Gender === g} onChange={handleChange} required className="hidden" />
                       {g}
                     </label>
                   ))}
@@ -1266,7 +1266,7 @@ const Name = () => {
                     required
                   >
                     <option value="" className="bg-white text-black">-- SELECT --</option>
-                    {["CSE", "IT", "ECE", "CS", "AIML", "EN", "ME", "Civil"].map(branch => (
+                    {["CSE", "IT", "ECE", "CS", "AIML", "EN", "ME", "Civil","CSE(DS)","CSIT","CS(Hindi)","CSE(AIML)"].map(branch => (
                       <option key={branch} value={branch} className="bg-white text-black font-bold">{branch}</option>
                     ))}
                   </select>
