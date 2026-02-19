@@ -18,8 +18,9 @@ const App = () => {
          <Route path="/test" element={<Test />} />
          <Route path="/closed" element={<Closed />} />
       </Routes> */}
-      <Test />
+      {/* <Test /> */}
 
+        <Closed />
         {/* <Registered />  */}
        {/* <Contact/>
       <Payment />
