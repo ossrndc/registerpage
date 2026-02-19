@@ -516,9 +516,9 @@ const Name = () => {
   };
 
   const validateStudentId = () => {
-    const studentIdRegex = /^(?:22|23|24|25)[\dDd-]{3,8}$/;
+    const studentIdRegex = /^(?:24|25)[\dDd-]{3,8}$/;
     if (!studentIdRegex.test(formData.StudentNO)) {
-      alert("Invalid StudentID. Only for 2nd, 3rd and 4th Year students!!");
+      alert("Invalid StudentID. Only for 1st, 2nd Year students!!");
       return false;
     } else {
       return true;
@@ -611,7 +611,7 @@ const Name = () => {
                   id="StudentNO"
                   type="text"
                   name="StudentNO"
-                  placeholder="24xxxxx"
+                  placeholder="25xxxxx"
                   maxLength="10"
                   value={formData.StudentNO}
                   onChange={handleChange}
