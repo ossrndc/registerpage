@@ -3,7 +3,6 @@
 // // import Instagram from "../assets/instagram.svg";
 // import { FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
-
 // const Registered = () => {
 //   return (
 //     <div className="w-full h-screen overflow-hidden px-4 py-4 md:px-10 md:py-6 flex flex-col justify-between items-center text-center relative">
@@ -32,11 +31,11 @@
 //       <div className="fixed top-22 hidden xl:block left-10 md:top-76 md:left-70 z-60">
 //         <div className="flex items-center rotate-[310deg] md:rotate-[350deg]">
 //           {/* <div className="w-4 h-4 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[rgb(133,206,195)]"></div> */}
-// {/* 
+// {/*
 //           <div
-//             className="w-0 h-0 
-//       border-t-[20px] border-t-transparent 
-//       border-b-[20px] border-b-transparent 
+//             className="w-0 h-0
+//       border-t-[20px] border-t-transparent
+//       border-b-[20px] border-b-transparent
 //       border-l-[30px] border-l-[rgb(133,206,195)]
 //       sm:border-t-[28px] sm:border-b-[28px] sm:border-l-[42px]
 //       md:border-t-[40px] md:border-b-[40px] md:border-l-[60px]"
@@ -81,7 +80,6 @@
 //           </p>
 //         </div>
 
-        
 //         <div className="flex items-center gap-3 md:gap-6 mt-2 md:mt-0">
 //           <h2 className="text-lg md:text-lg font-semibold text-white">
 //             Let's Connect :
@@ -96,7 +94,7 @@
 //               <FaInstagram className="text-white h-6 w-6 md:h-12 md:w-8 transition hover:scale-120" />
 //             </a>
 //           {/* </div> */}
-          
+
 //           {/* <div className="border-2 border-gray-500 rounded-xl p-1"> */}
 //             <a
 //               href="https://www.linkedin.com/company/team-oss/"
@@ -115,19 +113,17 @@
 
 // export default Registered;
 
-
-
 // import React from "react";
 // import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 // const Registered = () => {
 //   return (
-//     <div 
+//     <div
 //       className="w-full relative overflow-hidden flex flex-col items-center justify-center bg-[#facc15] font-sans px-4"
 //       style={{ minHeight: "100vh" }}
 //     >
 //       {/* 1. Retro Grid Overlay */}
-//       <div 
+//       <div
 //         className="absolute inset-0 z-0 opacity-100"
 //         style={{
 //           backgroundImage: `
@@ -148,7 +144,7 @@
 
 //       {/* Main Content Area */}
 //       <div className="relative z-10 w-full max-w-[900px] flex flex-col items-center">
-        
+
 //         {/* Pixel Header */}
 //         <h1 className="text-5xl md:text-8xl text-center font-black text-black mb-12 tracking-tighter drop-shadow-[4px_4px_0px_rgba(255,255,255,1)] uppercase italic">
 //           Commit 3.0
@@ -159,10 +155,10 @@
 //           {/* Decorative Back Cards */}
 //           <div className="absolute inset-0 bg-[#1d4ed8] border-[4px] border-black rounded-3xl translate-x-4 translate-y-4 -rotate-2"></div>
 //           <div className="absolute inset-0 bg-[#f43f5e] border-[4px] border-black rounded-3xl translate-x-2 translate-y-2 rotate-1"></div>
-          
+
 //           {/* Main Success Card */}
 //           <div className="relative bg-[#2dd4bf] border-[4px] border-black rounded-3xl p-8 md:p-12 shadow-[10px_10px_0px_rgba(0,0,0,1)] flex flex-col items-center text-center">
-            
+
 //             {/* <h2 className="text-xl md:text-5xl font-black text-black mb-4 uppercase tracking-tight drop-shadow-sm">
 //               Your payment was successful. We’ll verify it shortly and add you to the WhatsApp group.
 //               Please check your email for event details. If you don’t see it, kindly check your spam folder as well.
@@ -172,7 +168,7 @@
 //   <h2 className="text-sm md:text-lg font-bold text-black/80 leading-relaxed uppercase tracking-wide">
 //     Your payment was successful. We’ll verify it shortly and add you to the WhatsApp group.
 //   </h2>
-  
+
 //   <div className="space-y-1">
 //     <p className="text-xs md:text-sm font-medium text-black/60 italic">
 //       *Please check your email for event details. If you don’t see it, kindly check your spam folder as well.
@@ -195,7 +191,7 @@
 //             {/* Social Links Section */}
 //             <div className="w-full bg-black/5 rounded-2xl p-6 border-2 border-dashed border-black/20">
 //               <h3 className="text-xl font-black text-black uppercase mb-4 tracking-widest">Connect With Us</h3>
-              
+
 //               <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
 //                 <a
 //                   href="https://www.instagram.com/team__oss"
@@ -205,7 +201,7 @@
 //                 >
 //                   <FaInstagram size={24} /> @team__oss
 //                 </a>
-                
+
 //                 <a
 //                   href="https://www.linkedin.com/company/team-oss/"
 //                   target="_blank"
@@ -229,18 +225,17 @@
 
 // export default Registered;
 
-
 // import React from "react";
 // import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 // const Registered = () => {
 //   return (
-//     <div 
+//     <div
 //       // Changed h-screen/overflow-hidden to min-h-screen/overflow-y-auto for laptop compatibility
 //       className="w-full relative min-h-screen flex flex-col items-center justify-center bg-[#facc15] font-sans px-4 py-10 overflow-y-auto selection:bg-black selection:text-white"
 //     >
 //       {/* 1. Retro Grid Overlay */}
-//       <div 
+//       <div
 //         className="absolute inset-0 z-0 opacity-100 pointer-events-none"
 //         style={{
 //           backgroundImage: `
@@ -261,7 +256,7 @@
 
 //       {/* Main Content Area */}
 //       <div className="relative z-10 w-full max-w-[900px] flex flex-col items-center">
-        
+
 //         {/* Pixel Header - Adjusted size to prevent pushing content off-screen */}
 //         <h1 className="text-5xl md:text-7xl lg:text-8xl text-center font-black text-black mb-6 md:mb-10 tracking-tighter drop-shadow-[4px_4px_0px_rgba(255,255,255,1)] uppercase italic leading-none">
 //           Commit 3.0
@@ -272,10 +267,10 @@
 //           {/* Decorative Back Cards */}
 //           <div className="absolute inset-0 bg-[#1d4ed8] border-[4px] border-black rounded-3xl translate-x-3 translate-y-3 -rotate-2"></div>
 //           <div className="absolute inset-0 bg-[#f43f5e] border-[4px] border-black rounded-3xl translate-x-1.5 translate-y-1.5 rotate-1"></div>
-          
+
 //           {/* Main Success Card - Reduced padding to md:p-10 */}
 //           <div className="relative bg-[#2dd4bf] border-[4px] border-black rounded-3xl p-6 md:p-10 shadow-[10px_10px_0px_rgba(0,0,0,1)] flex flex-col items-center text-center">
-            
+
 //             {/* Primary Success Headline */}
 //             <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter italic drop-shadow-[3px_3px_0px_rgba(0,0,0,1)] mb-4">
 //               Registration Successful!
@@ -286,7 +281,7 @@
 //               <p className="text-xs md:text-sm font-black text-black uppercase">
 //                 Payment verified. We'll add you to the WhatsApp group shortly.
 //               </p>
-              
+
 //               <div className="space-y-1">
 //                 <p className="text-[10px] md:text-xs font-bold text-black/70 italic bg-black/5 py-2 px-2 rounded-lg border border-dashed border-black/20">
 //                   *Check your email/spam for event details.
@@ -308,7 +303,7 @@
 //             {/* Social Links Section */}
 //             <div className="w-full bg-black/10 rounded-2xl p-4 md:p-6 border-[3px] border-black">
 //               <h3 className="text-sm md:text-md font-black text-black uppercase mb-4 tracking-widest">Connect With Us</h3>
-              
+
 //               <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
 //                 <a
 //                   href="https://www.instagram.com/team__oss"
@@ -318,7 +313,7 @@
 //                 >
 //                   <FaInstagram size={18} /> @team__oss
 //                 </a>
-                
+
 //                 <a
 //                   href="https://www.linkedin.com/company/team-oss/"
 //                   target="_blank"
@@ -343,24 +338,21 @@
 
 // export default Registered;
 
-
 import React from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 const Registered = () => {
   return (
-    <div 
-      className="w-full relative min-h-screen flex flex-col items-center justify-start md:justify-center bg-[#facc15] font-sans px-4 py-8 overflow-y-auto selection:bg-black selection:text-white"
-    >
+    <div className="w-full relative min-h-screen flex flex-col items-center justify-start md:justify-center bg-[#facc15] font-sans px-4 py-8 overflow-y-auto selection:bg-black selection:text-white">
       {/* 1. Retro Grid Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0 opacity-100 pointer-events-none"
         style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
             linear-gradient(to bottom, #000 1px, transparent 1px)
           `,
-          backgroundSize: '80px 80px',
+          backgroundSize: "80px 80px",
         }}
       ></div>
 
@@ -369,12 +361,15 @@ const Registered = () => {
 
       {/* OSS Logo */}
       <div className="fixed top-4 left-4 md:top-6 md:left-10 z-50">
-        <img src="/OSS.png" alt="OSS Logo" className="w-14 md:w-20 invert drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]" />
+        <img
+          src="/OSS.png"
+          alt="OSS Logo"
+          className="w-14 md:w-20 invert drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+        />
       </div>
 
       {/* Main Content Area */}
       <div className="relative z-10 w-full max-w-[800px] flex flex-col items-center">
-        
         {/* Adjusted Header Size - Prevents pushing card off-screen */}
         <h1 className="text-4xl md:text-7xl text-center font-black text-black mb-4 md:mb-8 tracking-tighter drop-shadow-[4px_4px_0px_rgba(255,255,255,1)] uppercase italic leading-none">
           Commit 3.0
@@ -385,10 +380,9 @@ const Registered = () => {
           {/* Decorative Back Cards - Tightened translations */}
           <div className="absolute inset-0 bg-[#1d4ed8] border-[4px] border-black rounded-3xl translate-x-2 translate-y-2 -rotate-1"></div>
           <div className="absolute inset-0 bg-[#f43f5e] border-[4px] border-black rounded-3xl translate-x-1 translate-y-1 rotate-1"></div>
-          
+
           {/* Main Success Card - Optimized Padding */}
           <div className="relative bg-[#2dd4bf] border-[4px] border-black rounded-3xl p-5 md:p-8 shadow-[8px_8px_0px_rgba(0,0,0,1)] flex flex-col items-center text-center">
-            
             {/* Primary Success Headline */}
             <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter italic drop-shadow-[3px_3px_0px_rgba(0,0,0,1)] mb-3 leading-tight">
               Registration Successful!
@@ -397,15 +391,22 @@ const Registered = () => {
             {/* Instruction Block - Tightened gaps */}
             <div className="flex flex-col gap-2 max-w-sm mx-auto mb-4">
               <p className="text-[11px] md:text-sm font-black text-black uppercase leading-tight">
-                Your payment is under verification. Once verified, you’ll be added to the TEAM OSS WhatsApp group within 24 hours.
+                Your payment is under verification. Once verified, you’ll be
+                added to the TEAM OSS WhatsApp group within 24 hours.
               </p>
-              
+
               <div className="space-y-1">
                 {/* <p className="text-[9px] md:text-xs font-bold text-black/70 italic bg-black/5 py-1.5 px-2 rounded-lg border border-dashed border-black/20">
                   *Check your email/spam for event details.
                 </p> */}
                 <p className="text-[10px] md:text-xs font-black text-black">
-                  Issues? WhatsApp: <span className="underline decoration-2 underline-offset-2">8318055601</span>
+                  Issues? WhatsApp:{" "}
+                  <a
+                    href="tel:+918318055601"
+                    className="underline decoration-2 underline-offset-2"
+                  >
+                    8318055601
+                  </a>
                 </p>
               </div>
             </div>
@@ -420,8 +421,10 @@ const Registered = () => {
 
             {/* Social Links Section - Responsive grid to save vertical space */}
             <div className="w-full bg-black/10 rounded-2xl p-4 border-[3px] border-black">
-              <h3 className="text-xs md:text-sm font-black text-black uppercase mb-3 tracking-widest">Connect With Us</h3>
-              
+              <h3 className="text-xs md:text-sm font-black text-black uppercase mb-3 tracking-widest">
+                Connect With Us
+              </h3>
+
               <div className="flex flex-row gap-3 justify-center items-center">
                 <a
                   href="https://www.instagram.com/team__oss"
@@ -430,7 +433,7 @@ const Registered = () => {
                 >
                   <FaInstagram size={16} /> Instagram
                 </a>
-                
+
                 <a
                   href="https://www.linkedin.com/company/team-oss/"
                   target="_blank"
