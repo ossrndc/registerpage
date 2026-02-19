@@ -1093,7 +1093,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // Correct named import to prevent ReferenceError
-import LoadingAnimation from "./LoadingAnimation"; 
+import InitialLoader from "./LoadingAnimation"; 
 
 const Name = () => {
   const navigate = useNavigate();
@@ -1152,10 +1152,10 @@ const Name = () => {
     navigate("/contact", { state: { formData } });
   };
 
-  // if (isLoading) {
-  //   return <InitialLoader />;
-  // }
-
+  if (isLoading) {
+    return <InitialLoader />;
+  }
+                                                
   return (
     <div
       // Changed justify-center to justify-start on mobile and added pt-24
