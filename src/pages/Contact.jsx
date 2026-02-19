@@ -398,6 +398,7 @@ const Contact = () => {
       if (!executeRecaptcha) return;
       const token = await executeRecaptcha("form_submit");
       
+      // console.log("Sending payload to server:", payload);
       const res = await fetch(`${backendUrl}/api/v1/recaptcha`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -408,6 +409,7 @@ const Contact = () => {
         }),
       });
       const result = await res.json();
+      // console.log("Server response:", result);
       
       if (result.success) {
         // Ensuring data sent to success page is perfectly synced
