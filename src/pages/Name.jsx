@@ -1266,7 +1266,7 @@ const Name = () => {
                     required
                   >
                     <option value="" className="bg-white text-black">-- SELECT --</option>
-                    {["CSE", "IT", "ECE", "CS", "AIML", "EN", "ME", "Civil"].map(branch => (
+                    {["CSE", "IT", "ECE", "CS", "AIML", "EN", "ME", "Civil","CSE(DS)","CSIT","CS(Hindi)","CSE(AIML)"].map(branch => (
                       <option key={branch} value={branch} className="bg-white text-black font-bold">{branch}</option>
                     ))}
                   </select>
