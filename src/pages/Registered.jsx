@@ -401,9 +401,9 @@ const Registered = () => {
               </p>
               
               <div className="space-y-1">
-                <p className="text-[9px] md:text-xs font-bold text-black/70 italic bg-black/5 py-1.5 px-2 rounded-lg border border-dashed border-black/20">
+                {/* <p className="text-[9px] md:text-xs font-bold text-black/70 italic bg-black/5 py-1.5 px-2 rounded-lg border border-dashed border-black/20">
                   *Check your email/spam for event details.
-                </p>
+                </p> */}
                 <p className="text-[10px] md:text-xs font-black text-black">
                   Issues? WhatsApp: <span className="underline decoration-2 underline-offset-2">8318055601</span>
                 </p>
@@ -415,7 +415,7 @@ const Registered = () => {
 
             {/* Welcome Text */}
             <p className="text-base md:text-lg font-black text-black mb-6 uppercase tracking-widest">
-              Welcome to OSS
+              Welcome to OSS Event
             </p>
 
             {/* Social Links Section - Responsive grid to save vertical space */}
@@ -443,7 +443,7 @@ const Registered = () => {
 
             {/* Footer Tag */}
             <p className="mt-6 text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] text-black/40">
-              Hour of Code 4.0 // 2026
+              Commit 3.0 // 2026
             </p>
           </div>
         </div>
