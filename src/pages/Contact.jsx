@@ -607,7 +607,7 @@ if (!emailRegex.test(email)) {
       {/* --- FULL SCREEN QR ZOOM MODAL --- */}
       {isZoomed && (
         <div 
-          className="fixed inset-0 z-[200] bg-black flex flex-col items-center justify-center p-4"
+          className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center p-4"
           onClick={() => setIsZoomed(false)} 
         >
           {/* Close Button */}
