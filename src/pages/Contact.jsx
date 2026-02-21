@@ -561,7 +561,7 @@ const Contact = () => {
     }
 
     const email = contactData.Email.trim().toLowerCase();
-const emailRegex = /^[a-zA-Z]{3,}(24|25)[a-zA-Z0-9]*@akgec\.ac\.in$/;
+const emailRegex = /^[a-zA-Z]{3,}(24|25)[a-zA-Z0-9-]*@akgec\.ac\.in$/;
 
 if (!emailRegex.test(email)) {
   alert("Enter a valid AKGEC college email ID.");
