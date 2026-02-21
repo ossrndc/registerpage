@@ -552,52 +552,81 @@ const Contact = () => {
     setContactData({ ...contactData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const txId = contactData.transactionId.trim().toUpperCase();
-    if (txId.length < 10) {
-      alert("Invalid Transaction ID.");
-      return;
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const email = contactData.Email.trim().toLowerCase();
-const emailRegex = /^[a-zA-Z]{3,}(24|25)[a-zA-Z0-9-]*@akgec\.ac\.in$/;
+  if (!formData) {
+    alert("Form data missing. Please start again.");
+    navigate("/");
+    return;
+  }
 
-if (!emailRegex.test(email)) {
-  alert("Enter a valid AKGEC college email ID.");
-  return;
-}
+  const txId = contactData.transactionId.trim().toUpperCase();
+  if (txId.length < 10) {
+    alert("Invalid Transaction ID.");
+    return;
+  }
 
-    // ACTIVATE BUTTON PROCESSING STATE
-    setIsSubmitting(true);
-    try {
-      if (!executeRecaptcha) return;
-      const token = await executeRecaptcha("form_submit");
-      
-      // console.log("Sending payload to server:", payload);
-      const res = await fetch(`${backendUrl}/api/v1/recaptcha`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          Token: token, formData, contactData: { ...contactData, transactionId: txId } 
-        }),
+  const email = contactData.Email.trim().toLowerCase();
+  const emailRegex = /^[a-zA-Z]{3,}(24|25)[a-zA-Z0-9-]*@akgec\.ac\.in$/;
+
+  if (!emailRegex.test(email)) {
+    alert("Enter a valid AKGEC college email ID.");
+    return;
+  }
+
+  if (!contactData.Residence) {
+    alert("Please select residency status.");
+    return;
+  }
+
+  if (!executeRecaptcha) {
+    alert("Captcha not ready.");
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    const token = await executeRecaptcha("form_submit");
+
+    const payload = {
+      Token: token,
+      ...formData,
+      ...contactData,
+      transactionId: txId,
+      Email: email,
+    };
+
+    const res = await fetch(`${backendUrl}/api/v1`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      navigate("/registered", {
+        state: {
+          studentData: {
+            ...formData,
+            ...contactData,
+            transactionId: txId,
+            Email: email,
+          },
+        },
       });
-      const result = await res.json();
-      // console.log("Server response:", result);
-      
-      if (result.success) {
-        navigate("/registered", { 
-          state: { studentData: { ...formData, ...contactData, transactionId: txId } } 
-        });
-      } else {
-        alert(result.message || "Registration failed.");
-        setIsSubmitting(false);
-      }
-    } catch (err) {
-      alert("Something went wrong with the server connection.");
+    } else {
+      alert(result.message || "Registration failed.");
       setIsSubmitting(false);
     }
-  };
+
+  } catch (err) {
+    alert("Server connection failed.");
+    setIsSubmitting(false);
+  }
+};
 
   // if (isLoading) return <InitialLoader />;
 
