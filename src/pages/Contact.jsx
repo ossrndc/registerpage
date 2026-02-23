@@ -598,7 +598,7 @@ const handleSubmit = async (e) => {
       Email: email,
     };
 
-    const res = await fetch(`${backendUrl}/api/v1`, {
+    const res = await fetch(`${backendUrl}/api/v2`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
