@@ -598,7 +598,7 @@ const handleSubmit = async (e) => {
       Email: email,
     };
 
-    const res = await fetch(`${backendUrl}/api/v1`, {
+    const res = await fetch(`${backendUrl}/api/v2`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -719,6 +719,7 @@ const handleSubmit = async (e) => {
               <div className="flex flex-col gap-1">
                 <label className="text-md font-black text-black uppercase tracking-tight">UTR / Transaction ID</label>
                 <input type="text" name="transactionId" placeholder="e.g. HDBI520355" required value={contactData.transactionId} onChange={handleChange} className="w-full px-4 py-3 border-[3px] border-black rounded-xl bg-white font-black text-black" />
+              <p className=" px-4 text-sm font-black text-black uppercase tracking-tight">Have issue ? please whatsapp on <b className="underline text-blue-800 ">8318055601</b></p>
               </div>
             </div>
 
