@@ -1245,7 +1245,7 @@ const Name = () => {
               <div className="flex flex-col gap-1.5">
                 <p className="text-xs md:text-xl font-black text-black uppercase tracking-tight">Gender</p>
                 <div className="flex gap-2">
-                  {["male", "female"].map((g) => (
+                  {["male"].map((g) => (
                     <label key={g} className={`flex-1 flex items-center justify-center py-2 md:py-4 border-[2px] md:border-[4px] border-black rounded-lg md:rounded-2xl cursor-pointer transition-all font-black uppercase text-xs md:text-lg ${formData.Gender === g ? 'bg-[#10b981] text-black translate-y-0.5' : 'bg-white text-black shadow-[2px_2px_0px_rgba(0,0,0,1)]'}`}>
                       <input type="radio" name="Gender" value={g} checked={formData.Gender === g} onChange={handleChange} required className="hidden" />
                       {g}
@@ -1284,6 +1284,7 @@ const Name = () => {
                 PROCEED
               </button>
             </div>
+            <h1 className="text-red-700 text-center font-bold md:text-xl">Note: Registeration for female participants is now closed.</h1>
           </form>
         </div>
       </div>
