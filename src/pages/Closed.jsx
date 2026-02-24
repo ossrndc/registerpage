@@ -10,7 +10,6 @@ const Closed = () => {
       setIsLoading(false);
     }, 3000);
 
-    // Cleanup timer on unmount
     return () => clearTimeout(timer);
   }, []);
 
@@ -28,6 +27,13 @@ const Closed = () => {
           <p>Registration for COMMIT 3.0 is now officially closed.</p>
           <p>Thank you for your overwhelming interest and support!</p>
           <p>For updates and future events, stay connected with us:</p>
+
+          <p className="text-red-600">
+            <strong>Important Update:</strong>
+            <br />
+            On-spot registrations will be available only for boys and day scholar girls.
+          </p>
+
           <p>
             <a
               target="_blank"
